@@ -1,0 +1,7 @@
+
+-js test.js
+Test
+-cp ../../hxmpp
+-D JABBER_SOCKETBRIDGE
+-D JABBER_DEBUG
+-D XMPP_DEBUG
