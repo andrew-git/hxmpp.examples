@@ -1,0 +1,49 @@
+
+-neko echobot.n
+-main EchoBot
+-cp ../../hxmpp
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+-cp ../../../hxssl
+
+--next
+-swf9 echobot.swf
+-main EchoBot
+-cp ../../hxmpp
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+-swf-lib ../../hxtls/tls.swf
+-cp ../../../hxtls/hxclasses
+
+--next
+-js echobot.js
+EchoBot
+-cp ../../hxmpp
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+-D JABBER_SOCKETBRIDGE
+
+--next
+-php .
+--php-front echobot.php
+-main EchoBot
+-cp ../../hxmpp
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+
+#--next
+#-js echobot.node.js
+#-main EchoBot
+#-cp ../../hxmpp
+#-cp ../../hx.node.js/std
+#-D nodejs
+#-D JABBER_DEBUG
+#-D XMPP_DEBUG
+
+#--next
+#-cpp cpp
+#-main EchoBot
+#-cp ../../hxmpp
+#-D JABBER_DEBUG
+#-D XMPP_DEBUG
+#-D HXCPP_MULTI_THREADED
