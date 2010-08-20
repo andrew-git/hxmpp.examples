@@ -1,0 +1,33 @@
+
+-cp ../../hxmpp
+-cp ../../hxtls/hxclasses
+-swf9 test.swf
+-main App
+-D XMPP_DEBUG
+-D JABBER_DEBUG
+-swf-lib ../../hxtls/tls.swf
+
+--next
+-cp ../../hxmpp
+-cp ../../hxssl
+-neko test.n
+-main App
+-D XMPP_DEBUG
+-D JABBER_DEBUG
+
+--next
+-cp ../../hxmpp
+-php .
+--php-front test.php
+-main App
+-D XMPP_DEBUG
+-D JABBER_DEBUG
+
+#--next
+#-cp ../../hxmpp
+#-js test.node.js
+#-cp ../../hx.node.js/std
+#-D nodejs 
+#-main App
+#-D XMPP_DEBUG
+#-D JABBER_DEBUG
