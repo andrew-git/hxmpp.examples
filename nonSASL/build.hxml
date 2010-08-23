@@ -1,0 +1,15 @@
+
+-neko test.n
+-main App
+-cp ../../hxmpp
+-D XMPP_DEBUG
+-D JABBER_DEBUG
+
+#--next
+#-js test.node.js
+#-main App
+#-cp ../../hxmpp
+#-D XMPP_DEBUG
+#-D JABBER_DEBUG
+#-D nodejs
+#-cp ../../hx.node.js/std
