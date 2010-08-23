@@ -1,0 +1,6 @@
+
+-js hxmpp.js
+Lib
+-cp ../../hxmpp
+-D XMPP_DEBUG
+-D JABBER_DEBUG
