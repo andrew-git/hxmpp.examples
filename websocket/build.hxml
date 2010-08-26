@@ -5,3 +5,12 @@ Test
 -cp ../../hxmpp/util
 -D JABBER_DEBUG
 -D XMPP_DEBUG
+
+--next
+-swf9 test.swf
+-swf-header 600:600:60:eeeeee
+-main Test
+-cp ../../hxmpp
+-cp ../../hxmpp/util
+-D JABBER_DEBUG
+-D XMPP_DEBUG
