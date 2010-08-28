@@ -1,6 +1,6 @@
 
 /**
-	Sends a HTTP link to a buddy.
+	Sends a XHTML HTTP link to a buddy.
 */
 class Test extends ClientBase {
 	

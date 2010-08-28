@@ -6,6 +6,10 @@ import jabber.component.Stream;
 */
 class ComponentDemo {
 	
+	static var SERVER = "disktree";
+	static var COMPONENT = "mycomp";
+	static var SECRET = "1234";
+	
 	static var stream : Stream;
 	
 	static function main() {
@@ -25,7 +29,7 @@ class ComponentDemo {
 		stream.onConnect = function() {
 			trace( "Component connected. Have fun!", "info" );
 		}
-		stream.open( "server.com", "mycomp", "mysecret", [identity] );
+		stream.open( SERVER, COMPONENT, SECRET, [identity] );
 		trace( "Connecting to server ("+stream.host+") ..." );
 	}
 	

@@ -5,6 +5,14 @@
 -D XMPP_DEBUG
 -D JABBER_DEBUG
 
+--next
+-cpp cpp
+-main App
+-cp ../../hxmpp
+-D XMPP_DEBUG
+-D JABBER_DEBUG
+-D HXCPP_MULTI_THREADED
+
 #--next
 #-js test.node.js
 #-main App
