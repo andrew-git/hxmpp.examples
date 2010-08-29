@@ -1,0 +1,7 @@
+
+-cp ../
+-cp ../../hxmpp/
+-neko test.n
+-main Test
+-D JABBER_DEBUG
+-D XMPP_DEBUG
