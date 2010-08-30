@@ -1,9 +1,17 @@
 #!/bin/bash
 
+builded=0
 for i in $( ls -d */ ); do
-	echo ---------------- BUILDING: $i
-	cd $i
-	haxe build.hxml
-	cd ..
+	if [ $(echo $i | sed 's%^_%%') = $i ]
+	then
+		cd $i
+		if [ -e build.hxml ]
+		then
+			echo $builded --- BUILDING: $i
+			haxe build.hxml
+			builded=$((builded+1))
+		fi
+		cd ..
+	fi
 done
-echo done.
+echo done - $builded
