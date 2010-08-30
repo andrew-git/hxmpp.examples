@@ -4,10 +4,13 @@ import jabber.client.Stream;
 
 /**
 	Base class for XMPP client tests.
-	This class gets extended by the test applications
-	to avoid repeating the authentication process over and over again.
+	This class gets extended by the test applications to avoid repeating the authentication process over and over again.
 */
 class ClientBase {
+	
+	#if js
+	static var BOSH_PATH = "127.0.0.1/jabber";
+	#end
 	
 	var stream : Stream;
 	var pass : String;
@@ -19,7 +22,11 @@ class ClientBase {
 		var _jid = new jabber.JID( jid );
 		var _host = ( host == null ) ? _jid.domain : host;
 		this.pass = pass;
+		#if js
+		var cnx = new jabber.BOSHConnection( _jid.domain, BOSH_PATH );
+		#else
 		var cnx = new jabber.SocketConnection( _host );
+		#end
 		stream = new Stream( cnx );
 		stream.onOpen = onStreamOpen;
 		stream.onClose = onStreamClose;
@@ -36,7 +43,10 @@ class ClientBase {
 	}
 	
 	function onStreamClose( ?e ) {
-		trace( "XMPP stream closed ["+stream.jid+"]" );
+		if( e == null )
+			trace( "XMPP stream closed ["+stream.jid+"]" );
+		else
+			trace( "XMPP stream error ["+e+"]" );
 	}
 	
 	function onLoginFail( ?e ) {

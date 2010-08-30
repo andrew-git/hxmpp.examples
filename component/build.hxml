@@ -17,15 +17,15 @@
 -D JABBER_COMPONENT
 -debug
 
---next
--cp ../../hxmpp
--cpp cpp
--main ComponentDemo
--D XMPP_DEBUG
--D JABBER_DEBUG
--D JABBER_COMPONENT
--D HXCPP_MULTI_THREADED
--debug
+#--next
+#-cp ../../hxmpp
+#-cpp cpp
+#-main ComponentDemo
+#-D XMPP_DEBUG
+#-D JABBER_DEBUG
+#-D JABBER_COMPONENT
+#-D HXCPP_MULTI_THREADED
+#-debug
 
 #--next
 #-D nodejs
