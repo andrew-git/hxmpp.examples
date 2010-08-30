@@ -1,0 +1,77 @@
+
+* {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	padding: 10px;
+	margin: 0;
+	font-family: Helvetica Arial,Sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+button {
+	font-style: normal;
+	font-size: 10px;
+	text-decoration: none;
+	color: #333;
+	background-position: bottom;
+	background-repeat: repeat-x;
+	background-color: #fff;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	padding: 2px 4px;
+	border: none;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ccc;
+}
+button:hover {
+	text-decoration: none;
+	border: 1px solid #999;
+	cursor: pointer;
+}
+button:active {
+	background-color: #e6e6e6;
+	background-image: none;
+}
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: 1px dotted transparent;
+}
+input[type="text"],
+input[type="password"] {
+	-moz-border-radius-bottomleft: 2px;
+	-moz-border-radius-bottomright: 2px;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-topright: 2px;
+	color: #777;
+	background-color: #FAFAFA;
+	border: 1px solid #ccc;
+	display: block;
+	font-family: Helvetica, Arial, Sans-serif;
+	font-size: 12px;
+	margin:0 0 5px;
+	padding:2px;
+	width:200px;
+}
+
+.chatstate {
+	padding: 4px;
+	background-color : #eee;
+}
+#ui_romeo, #ui_julia {
+	padding: 10px;
+}
+#ui_romeo {
+	background-color : #B2F6FF;
+}
+#ui_julia {
+	background-color : #FFD8F3;
+}
