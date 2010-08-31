@@ -2,23 +2,30 @@
 import jabber.SocketConnection;
 
 /**
-	Example usage of a flash socketbridge to connect to a XMPP server from HXMPP/JS
+	Example usage of a flash socketbridge to connect to a XMPP server from HXMPP/JS.
 */
 class Test {
 	
 	static function main() {
 		
-		var swf = "socketbridge.swf";
-		//var swf = "socketbridge_tls.swf";
-		untyped swfobject.embedSWF( swf, "socketbridge", "400", "200", "10" );
+		haxe.Firebug.redirectTraces();
 		
-		SocketBridgeConnection.initDelayed( "socketbridge", function(){
-			var cnx = new SocketConnection( "localhost", 5222 );
+		var swf = "../../hxmpp/util/socketbridge/socketbridge_tls.swf";
+		//var swf = "../../hxmpp/util/socketbridge/socketbridge.swf";
+		untyped swfobject.embedSWF( swf, "socketbridge", "600", "320", "9" );
+		
+		SocketConnection.init( "socketbridge", function() {
+			var cnx = new SocketConnection( "127.0.0.1", 5222, true );
 			var stream = new jabber.client.Stream( cnx );
 			stream.onOpen = function(){
 				trace( "XMPP stream opened" );
+				var auth = new jabber.client.SASLAuth( stream, [cast new jabber.sasl.PlainMechanism()] );
+				auth.onSuccess = function(){
+					stream.sendPresence();
+				}
+				auth.authenticate( "test", "HXMPP" );
 			}
-			stream.open( new jabber.JID( "node@example.com" ) );
+			stream.open( new jabber.JID( "romeo@disktree" ) );
 		});
 	}
 }
