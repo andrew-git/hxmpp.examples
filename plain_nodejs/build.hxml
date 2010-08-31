@@ -1,12 +1,13 @@
 
 # Build your custom XMPP client library by adding/removing needed class here
 
--js hxmpp.js
-Lib
 -cp ../../hxmpp
+-js hxmpp.js
+-D nodejs
+-cp ../../hx.node.js/std
 -D XMPP_DEBUG
 -D JABBER_DEBUG
-jabber.BOSHConnection
+jabber.SocketConnection
 jabber.client.Stream
 jabber.client.Roster
 jabber.client.SASLAuth
