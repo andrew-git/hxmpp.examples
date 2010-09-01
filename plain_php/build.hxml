@@ -1,0 +1,10 @@
+
+-cp ../../hxmpp
+-php ./
+-D XMPP_DEBUG
+-D JABBER_DEBUG
+jabber.SocketConnection
+jabber.client.Stream
+jabber.client.Roster
+jabber.client.SASLAuth
+jabber.sasl.PlainMechanism
