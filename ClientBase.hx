@@ -22,7 +22,7 @@ class ClientBase {
 		var _jid = new jabber.JID( jid );
 		var _host = ( host == null ) ? _jid.domain : host;
 		this.pass = pass;
-		#if js
+		#if (js&&!nodejs)
 		var cnx = new jabber.BOSHConnection( _jid.domain, BOSH_PATH );
 		#else
 		var cnx = new jabber.SocketConnection( _host );

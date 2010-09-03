@@ -7,7 +7,7 @@ require('lib/jabber/SocketConnection.class.php');
 require('lib/jabber/client/SASLAuth.class.php');
 
 $cnx = new jabber_SocketConnection("127.0.0.1",null,null,null,null,null);
-$stream = new jabber_client_Stream($cnx,"1.0");
+$stream = new jabber_client_Stream($cnx,null);
 $stream->onOpen = function() use ($stream) {
 	print "XMPP stream opened";
 	$mechs = new HList();

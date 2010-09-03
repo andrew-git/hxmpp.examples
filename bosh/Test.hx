@@ -1,4 +1,8 @@
 
+/**
+	BOSH for flash is currently broken !!!
+	See: http://code.google.com/p/haxe/issues/detail?id=172
+*/
 class Test {
 	
 	static var stream : jabber.client.Stream;
@@ -9,9 +13,9 @@ class Test {
 		stream.onOpen = function(){
 			trace("XMPP stream opened");
 			var auth = new jabber.client.SASLAuth( stream, [cast new jabber.sasl.PlainMechanism()] );
-			auth.authenticate( "mypass", "HXMPP" );
+			auth.authenticate( "test", "HXMPP" );
 		}
 		stream.onClose = function(?e){ trace(e);};
-		stream.open( new jabber.JID( "hxmpp@disktree" ) );
+		stream.open( new jabber.JID( "romeo@disktree" ) );
 	}
 }

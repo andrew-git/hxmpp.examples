@@ -9,8 +9,8 @@ class EchoBot {
 	
 	static var HOST = "disktree";
 	static var IP = "192.168.0.110";
-	static var JID = "username@"+HOST;
-	static var PASSWORD = "mypassword";
+	static var JID = "hxmpp@"+HOST;
+	static var PASSWORD = "test";
     static var RESOURCE = "HXMPP";
 	
 	static var stream : Stream;
@@ -26,7 +26,9 @@ class EchoBot {
 		#if ( js && !nodejs && !JABBER_SOCKETBRIDGE )
 		var cnx = new jabber.BOSHConnection( HOST, IP+"/jabber" );
 		#else
-		var cnx = new jabber.SocketConnection( IP, 5222 );
+		//var cnx = new jabber.SocketConnection( IP );
+		var cnx = new jabber.SecureSocketConnection( IP );
+		
 		#end
 		#if JABBER_SOCKETBRIDGE trace( "Using flash socketbridge to connect to server" ); #end
 		

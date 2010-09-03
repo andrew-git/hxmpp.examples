@@ -7,11 +7,11 @@ for i in $( ls -d */ ); do
 		cd $i
 		if [ -e build.hxml ]
 		then
-			echo $builded --- BUILDING: $i
+			echo $builded --- $i
 			haxe build.hxml
 			builded=$((builded+1))
 		fi
 		cd ..
 	fi
 done
-echo done - $builded
+echo done:$builded
