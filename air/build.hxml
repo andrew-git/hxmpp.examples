@@ -1,0 +1,22 @@
+
+-cp ../../hxair
+#-lib hxair
+-cp ../../hxmpp
+-cp ..
+-swf bin/test.swf
+-swf-version 10
+-main Test
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+-D air
+
+--next
+-lib hxair
+#-cp ../../hxair
+-cp ../../hxmpp
+-cp ..
+-js bin/test.js
+Test
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+-D air
