@@ -1,0 +1,15 @@
+
+-neko test_romeo.n
+-main TestRomeo
+-cp ../../hxmpp
+-cp ..
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+
+--next
+-neko test_julia.n
+-main TestJulia
+-cp ../../hxmpp
+-cp ..
+-D JABBER_DEBUG
+-D XMPP_DEBUG
