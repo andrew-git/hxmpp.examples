@@ -1,19 +1,13 @@
 
 -js www/chatstate_romeo.js
 TestRomeo
--cp ..
--cp ../../hxmpp
 -lib jQueryExtern
 -resource chat.html@chat
--D JABBER_DEBUG
--D XMPP_DEBUG
+../include.hxml
 
 --next
 -js www/chatstate_julia.js
 TestJulia
--cp ..
--cp ../../hxmpp
 -lib jQueryExtern
 -resource chat.html@chat
--D JABBER_DEBUG
--D XMPP_DEBUG
+../include.hxml

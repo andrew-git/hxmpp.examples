@@ -7,9 +7,9 @@
 -cp ../../hx.node.js/std
 -D XMPP_DEBUG
 -D JABBER_DEBUG
-#--no-traces
 jabber.SocketConnection
 jabber.client.Stream
 jabber.client.Roster
 jabber.client.SASLAuth
 jabber.sasl.PlainMechanism
+#--no-traces

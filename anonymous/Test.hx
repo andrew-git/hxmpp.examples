@@ -2,6 +2,9 @@
 import jabber.client.SASLAuth;
 import jabber.sasl.AnonymousMechanism;
 
+/**
+	Anonymous login.
+*/
 class Test {
 	
 	static function main() {
@@ -31,7 +34,7 @@ class Test {
 			}
 			auth.authenticate( null, null);
 		}
-		stream.open( new jabber.JID( "null@disktree.ath.cx" ) ); // any JID
+		stream.open( new jabber.JID( null ) ); // any JID
 	}
 	
 }

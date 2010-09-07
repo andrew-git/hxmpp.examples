@@ -8,12 +8,11 @@ class Test extends ClientBase {
 		super.onLogin();
 		stream.sendPresence();
 		var m = new xmpp.Message( "julia@disktree", "LINK" );
-		stream.sendPacket( xmpp.XHTML.attach( m, '<a href="http://disktree.net">DISKTREE.NET</a>' ) );
+		stream.sendPacket( xmpp.XHTML.attach( m, '<a href="http://disktree.net"><strong>DISKTREE.NET</strong></a>' ) );
 	}
 	
 	static function main() {
-		var app = new Test();
-		app.login( "romeo@disktree", "test", "127.0.0.1" );
+		 new Test().login( "romeo@disktree" );
 	}
 	
 }

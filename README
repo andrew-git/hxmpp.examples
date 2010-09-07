@@ -3,5 +3,23 @@ HXMPP.examples
 ==============
 Example usages and tests for the HXMPP library.
 
+
+LINKS
+-----
 http://hxmpp.disktree.net
 http://github.com/tong/hxmpp
+
+
+BUILD+RUN
+---------
+In order to compile and run the tests the HXMPP library has to be in the same directory.
+
+Most of the tests extend the ClientBase class in the root directory.
+If compiled to javascript a jabber.BOSHConnection will get used to connect to the server.
+All other targets use a jabber.SocketConnection.
+
+Two (local) client accounts are used:
+* romeo
+* julia
+
+You will have to create these to run the tests.

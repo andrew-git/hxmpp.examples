@@ -10,7 +10,10 @@ class Test {
 			var auth = new jabber.client.SASLAuth( stream, [cast new jabber.sasl.PlainMechanism()] );
 			auth.authenticate( "test", "HXMPP" );
 		}
-		stream.onClose = function(?e){ trace(e);};
+		stream.onClose = function(?e){
+			trace( "XMPP stream closed", "info" );
+			if( e != null ) trace( e, "warn" );
+		};
 		stream.open( new jabber.JID( "tong@disktree" ) );
 	}
 	

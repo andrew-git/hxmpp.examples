@@ -1,0 +1,5 @@
+
+-neko test.n
+-main Test
+-cp ../../hxmpp/util/tls_neko
+../include.hxml

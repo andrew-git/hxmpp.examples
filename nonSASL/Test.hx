@@ -3,7 +3,7 @@
 	Example usage of non-sasl client authentication with a xmpp server.
 	This should NOT get used since its not secure.
 */
-class App {
+class Test {
 	
 	static function main() {
 		var cnx = new jabber.SocketConnection( "127.0.0.1", 5222 );
@@ -17,11 +17,11 @@ class App {
 			auth.onFail = function(?e) {
 				trace( "Failed to authenticate as "+s.jid.toString() );
 			}
-			auth.authenticate( "mypassword", "HXMPP" );
+			auth.authenticate( "test", "HXMPP" );
 		}
 		s.onClose = function(?e) {
 			trace("XMPP stream  closed "+e );
 		}
-		s.open( new jabber.JID( "username@disktree" ) );
+		s.open( new jabber.JID( "romeo@disktree" ) );
 	}
 }

@@ -23,8 +23,6 @@ class TestClient extends ClientBase {
 	
 	override function onLogin() {
 		
-		super.onLogin();
-		
 		chatState = new jabber.ChatStateNotification( stream );
 		chatState.onState = onChatState;
 		

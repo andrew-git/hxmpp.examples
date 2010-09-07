@@ -8,3 +8,4 @@ jabber.client.Stream
 jabber.client.Roster
 jabber.client.SASLAuth
 jabber.sasl.PlainMechanism
+#--no-traces

@@ -6,7 +6,6 @@ class TestRomeo extends TestClient {
 	}
 	
 	static function main() {
-		var app = new TestRomeo();
-		app.login( "romeo@disktree/HXMPP", "test", "127.0.0.1" );
+		new TestRomeo().login("romeo@disktree/HXMPP");
 	}
 }

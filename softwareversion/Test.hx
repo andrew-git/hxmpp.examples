@@ -16,8 +16,7 @@ class Test extends ClientBase {
 	}
 	
 	static function main() {
-		var app = new Test();
-		app.login( "romeo@disktree", "test", "127.0.0.1" );
+		new Test().login( "romeo@disktree" );
 	}
 	
 }

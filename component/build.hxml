@@ -27,13 +27,13 @@
 #-D HXCPP_MULTI_THREADED
 #-debug
 
-#--next
-#-D nodejs
-#-cp ../../hxmpp
-#-cp ../../hx.node.js/std
-#-js component.node.js
-#-main ComponentDemo
-#-D XMPP_DEBUG
-#-D JABBER_DEBUG
-#-D JABBER_COMPONENT
-#-debug
+--next
+-D nodejs
+-cp ../../hxmpp
+-cp ../../hx.node.js/std
+-js component.node.js
+-main ComponentDemo
+-D XMPP_DEBUG
+-D JABBER_DEBUG
+-D JABBER_COMPONENT
+-debug

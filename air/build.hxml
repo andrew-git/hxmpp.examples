@@ -1,6 +1,6 @@
 
--cp ../../hxair
 #-lib hxair
+-cp ../../hxair
 -cp ../../hxmpp
 -cp ..
 -swf bin/test.swf
@@ -11,8 +11,8 @@
 -D air
 
 --next
--lib hxair
-#-cp ../../hxair
+#-lib hxair
+-cp ../../hxair
 -cp ../../hxmpp
 -cp ..
 -js bin/test.js

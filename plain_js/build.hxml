@@ -1,8 +1,7 @@
 
-# Build your custom XMPP client library by adding/removing needed class here
+# Build your custom client library by adding/removing needed class here
 
 -js hxmpp.js
-Lib
 -cp ../../hxmpp
 -D XMPP_DEBUG
 -D JABBER_DEBUG
@@ -11,3 +10,4 @@ jabber.client.Stream
 jabber.client.Roster
 jabber.client.SASLAuth
 jabber.sasl.PlainMechanism
+#--no-traces

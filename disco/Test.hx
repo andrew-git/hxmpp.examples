@@ -58,7 +58,7 @@ class Test extends ClientBase {
 	}
 	
 	static function main() {
-		new Test().login( "romeo@disktree/HXMPP", "test", "127.0.0.1" );
+		new Test().login( "romeo@disktree" );
 	}
 
 }

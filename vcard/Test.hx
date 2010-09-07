@@ -73,8 +73,7 @@ class Test extends ClientBase {
 		flash.Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
 		haxe.Firebug.redirectTraces();
 		#end
-		var app = new Test();
-		app.login( "romeo@disktree", "test", "127.0.0.1" );
+		new Test().login( "romeo@disktree" );
 	}
 	
 }

@@ -1,6 +1,9 @@
 
 import jabber.client.Stream;
 
+/**
+	Air2 usage.
+*/
 class Test {
 	
 	var pass : String;

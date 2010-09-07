@@ -8,25 +8,34 @@ import jabber.client.Stream;
 */
 class ClientBase {
 	
-	#if js
-	static var BOSH_PATH = "127.0.0.1/jabber";
-	#end
-	
-	var stream : Stream;
+	var jid : String;
 	var pass : String;
+	var ip : String;
+	var boshpath : String;
+	var stream : Stream;
 	
 	function new() {
+		jid = "romeo@disktree/HXMPP";
+		pass = "test";
+		ip = "127.0.0.1";
+		boshpath = "jabber";
 	}
 	
-	function login( jid : String, pass : String, ?host : String ) {
+	function login( ?jid : String, ?pass : String, ?ip : String, ?boshpath : String ) {
+
+		if( jid != null ) this.jid = jid;
+		if( pass != null ) this.pass = pass;
+		if( ip != null ) this.ip = ip;
+		if( boshpath != null ) this.boshpath = boshpath;
+		
 		var _jid = new jabber.JID( jid );
-		var _host = ( host == null ) ? _jid.domain : host;
-		this.pass = pass;
-		#if (js&&!nodejs)
-		var cnx = new jabber.BOSHConnection( _jid.domain, BOSH_PATH );
-		#else
-		var cnx = new jabber.SocketConnection( _host );
+		
+		#if (neko||cpp||php||nodejs||flash||air)
+		var cnx = new jabber.SocketConnection( this.ip );
+		#elseif js
+		var cnx = new jabber.BOSHConnection( _jid.domain, this.ip+"/"+this.boshpath );
 		#end
+		
 		stream = new Stream( cnx );
 		stream.onOpen = onStreamOpen;
 		stream.onClose = onStreamClose;
@@ -37,30 +46,27 @@ class ClientBase {
 		var mechs = new Array<jabber.sasl.TMechanism>();
 		mechs.push( new jabber.sasl.PlainMechanism()  );
 		var auth = new jabber.client.SASLAuth( stream, mechs );
-		auth.onSuccess = onLogin;
+		auth.onSuccess = _onLogin;
 		auth.onFail = onLoginFail;
-		auth.authenticate( pass, stream.jid.resource );
+		var resource = ( stream.jid.resource != null ) ? stream.jid.resource : "HXMPP";
+		auth.authenticate( pass, resource );
 	}
 	
 	function onStreamClose( ?e ) {
-		if( e == null )
-			trace( "XMPP stream closed ["+stream.jid+"]" );
-		else
-			trace( "XMPP stream error ["+e+"]" );
+		if( e == null ) trace( "XMPP stream closed ["+stream.jid+"]", "info" );
+		else trace( "XMPP stream error ["+e+"]", "warn" );
 	}
 	
 	function onLoginFail( ?e ) {
 		trace( "Authentication failed ["+stream.jid+"]", "warn" );
 	}
 	
-	function onLogin() {
-		trace( "Logged in as ["+stream.jid+"]" );
+	function _onLogin() {
+		trace( "Logged in as: "+stream.jid, "info" );
+		onLogin();
 	}
 	
-	/*
-	public static function getAccount( num : Int ) : { jid : JID, pass : String } {
-		var p = haxe.Resource.getString( "account_"+num ).split( ":" );
-		return { jid : new jabber.JID( p[0] ), pass : p[1] };
+	function onLogin() {
+		//overide me
 	}
-	*/
 }

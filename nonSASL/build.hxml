@@ -1,17 +1,13 @@
 
 -neko test.n
--main App
--cp ../../hxmpp
--D XMPP_DEBUG
--D JABBER_DEBUG
+-main Test
+../include.hxml
 
---next
--cpp cpp
--main App
--cp ../../hxmpp
--D XMPP_DEBUG
--D JABBER_DEBUG
--D HXCPP_MULTI_THREADED
+#--next
+#-cpp cpp
+#-main Test
+#../include.hxml
+#-D HXCPP_MULTI_THREADED
 
 #--next
 #-js test.node.js

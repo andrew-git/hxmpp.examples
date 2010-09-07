@@ -2,7 +2,7 @@
 import jabber.SocketConnection;
 
 /**
-	Example usage of a flash socketbridge to connect to a XMPP server from HXMPP/JS.
+	Connect to a XMPP server from javascript using a flash socketbridge.
 */
 class Test {
 	
@@ -20,7 +20,8 @@ class Test {
 			stream.onOpen = function(){
 				trace( "XMPP stream opened" );
 				var auth = new jabber.client.SASLAuth( stream, [cast new jabber.sasl.PlainMechanism()] );
-				auth.onSuccess = function(){
+				auth.onSuccess = function() {
+					trace( "Authenticated as: "+stream.jid.toString(), "info" );
 					stream.sendPresence();
 				}
 				auth.authenticate( "test", "HXMPP" );

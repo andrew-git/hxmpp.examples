@@ -1,15 +1,9 @@
 
 -neko test_romeo.n
 -main TestRomeo
--cp ..
--cp ../../hxmpp
--D JABBER_DEBUG
--D XMPP_DEBUG
+../include.hxml
 
 --next
 -neko test_julia.n
 -main TestJulia
--cp ..
--cp ../../hxmpp
--D JABBER_DEBUG
--D XMPP_DEBUG
+../include.hxml
