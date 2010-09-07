@@ -1,6 +1,8 @@
 
 -swf-version 10
 -swf hxmpp.swc
+-D JABBER_DEBUG
+-D XMPP_DEBUG
 HXMPP
 -cp ../../hxmpp
 jabber.SocketConnection

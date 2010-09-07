@@ -23,6 +23,7 @@ package {
 	public class Test extends MovieClip {
 		
 		private var tf : TextField;
+		private var stream : jabber.client.Stream;
 		
 		public function Test() {
 			
@@ -39,9 +40,9 @@ package {
 			
 			info( "initializing HXMPP lib ..." );
 			
-			var jid : JID = new JID( "username@example.com" );
+			var jid : JID = new JID( "romeo@disktree/HXMPP" );
 			var cnx : SocketConnection = new SocketConnection( "127.0.0.1", 5222 ); 
-			var stream : Stream = new Stream( cnx );
+			stream = new Stream( cnx );
 			stream.onOpen = function():void {
 				info( "XMPP stream opened" );
            	 	var auth : SASLAuth = new SASLAuth( stream, [new MD5Mechanism()] );
@@ -54,13 +55,13 @@ package {
 			stream.open( jid );
 		}
 		
-		private function streamOpenHandler( s : Stream ) : void {
-			info( "Stream Opened" );
+		private function onLoginFail() : void {
+			info( "Failed to login" );
 		}
-
-		private function onLoginSuccess( s : Stream ) : void {
+		
+		private function onLoginSuccess() : void {
 			info( "Login success" );
-			var roster : Roster = new Roster( s );
+			var roster : Roster = new Roster( stream );
 			roster.onLoad = function() : void {
 				info( "Roster loaded("+roster.items.length+" items):" );
 				for( var i : int = 0; i < roster.items.length; i++ ) {
