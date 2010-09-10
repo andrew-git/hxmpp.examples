@@ -1,0 +1,14 @@
+
+-neko test.n
+-main Test
+../include.hxml
+
+#--next
+#-cp ..
+#-cp ../../hxmpp
+#-js www/rostertest.js
+#RosterTest
+#-D XMPP_DEBUG
+#-D JABBER_DEBUG
+#-lib jQueryExtern
+#-resource tpl/rosteritem.html@rosteritem
