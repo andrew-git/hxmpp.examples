@@ -13,6 +13,9 @@ class Test {
 		stream.onOpen = function(){
 			trace("XMPP stream opened");
 			var auth = new jabber.client.SASLAuth( stream, [cast new jabber.sasl.PlainMechanism()] );
+			auth.onSuccess = function(){
+				stream.sendPresence();
+			}
 			auth.authenticate( "test", "HXMPP" );
 		}
 		stream.onClose = function(?e){ trace(e);};

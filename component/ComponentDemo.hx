@@ -16,9 +16,9 @@ class ComponentDemo {
 		
 		trace( "HXMPP server component example" );
 		
-		var identity = { category : "conference", name : "MYSERVICE", type : "text" };
+		var identity = { category : "conference", name : COMPONENT, type : "text" };
 		
-		var cnx = new jabber.SocketConnection( "127.0.0.1" );
+		var cnx = new jabber.SocketConnection( "127.0.0.1", 5275 );
 		stream = new Stream( cnx );
 		stream.onOpen = function() {
 			trace( "XMPP stream opened.", "info" );

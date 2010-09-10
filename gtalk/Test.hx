@@ -3,7 +3,7 @@ import jabber.client.Stream;
 
 /**
 	GTalk example.
-	Google allows only secure socket connections on port 5223 or 443.
+	Google only allows secure socket connections on port 5223 or 443.
 */
 class Test extends ClientBase {
 	

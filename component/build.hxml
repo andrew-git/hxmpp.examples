@@ -1,39 +1,27 @@
 
--cp ../../hxmpp
 -neko component.n
 -main ComponentDemo
--D XMPP_DEBUG
--D JABBER_DEBUG
+../include.hxml
 -D JABBER_COMPONENT
--debug
 
 --next
--cp ../../hxmpp
 -php .
 --php-front component.php
 -main ComponentDemo
--D XMPP_DEBUG
--D JABBER_DEBUG
+../include.hxml
 -D JABBER_COMPONENT
--debug
 
-#--next
-#-cp ../../hxmpp
-#-cpp cpp
-#-main ComponentDemo
-#-D XMPP_DEBUG
-#-D JABBER_DEBUG
-#-D JABBER_COMPONENT
-#-D HXCPP_MULTI_THREADED
-#-debug
+--next
+-cpp cpp
+-main ComponentDemo
+../include.hxml
+-D JABBER_COMPONENT
+-D HXCPP_MULTI_THREADED
 
 --next
 -D nodejs
--cp ../../hxmpp
 -cp ../../hx.node.js/std
 -js component.node.js
 -main ComponentDemo
--D XMPP_DEBUG
--D JABBER_DEBUG
+../include.hxml
 -D JABBER_COMPONENT
--debug
