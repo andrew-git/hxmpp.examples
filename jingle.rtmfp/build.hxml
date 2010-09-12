@@ -1,0 +1,15 @@
+
+../include.hxml
+-swf www/caller.swf
+-swf-header 600:400:60:dddddd
+-swf-version 10
+-main Caller
+-resource stratus_key@stratus_key
+
+--next
+../include.hxml
+-swf www/callee.swf
+-swf-header 600:400:60:dddddd
+-swf-version 10
+-main Callee
+-resource stratus_key@stratus_key

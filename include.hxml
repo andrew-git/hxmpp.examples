@@ -1,6 +1,9 @@
 
 -cp ../
 -cp ../../hxmpp/
+#-cp ../../hxmpp/util/tls_neko
+#-cp ../../hxmpp/util/tls_flash
 -D JABBER_DEBUG
 -D XMPP_DEBUG
 -debug
+#-D TLS

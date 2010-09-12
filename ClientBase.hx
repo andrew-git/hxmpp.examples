@@ -32,6 +32,7 @@ class ClientBase {
 		
 		#if (neko||cpp||php||nodejs||flash||air)
 		var cnx = new jabber.SocketConnection( this.ip );
+		//var cnx = new jabber.SecureSocketConnection( this.ip );
 		#elseif js
 		var cnx = new jabber.BOSHConnection( _jid.domain, this.ip+"/"+this.boshpath );
 		#end
