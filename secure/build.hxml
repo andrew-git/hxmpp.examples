@@ -1,56 +1,45 @@
 
--cp ../../hxmpp
+../include.hxml
 -cp ../../hxmpp/util/tls_flash
 -swf test.swf
 -swf-version 10
 -swf-header 600:600:60:cccccc
 -main Test
--D XMPP_DEBUG
--D JABBER_DEBUG
 -D TLS
 -swf-lib ../../hxmpp/util/tls_flash/tls.swf
 
 --next
--cp ../../hxmpp/
+../include.hxml
 -cp ../../hxmpp/util/tls_neko
 -neko test.n
 -main Test
--D XMPP_DEBUG
--D JABBER_DEBUG
 
 --next
--cp ../../hxmpp
+../include.hxml
 -php .
 --php-front test.php
 -main Test
--D XMPP_DEBUG
--D JABBER_DEBUG
 
 --next
--cp ../../hxmpp
+../include.hxml
 -js test.node.js
 -cp ../../hx.node.js/std
 -D nodejs 
 -main Test
--D XMPP_DEBUG
--D JABBER_DEBUG
+
 
 --next
--cp ../../hxmpp
+../include.hxml
 -cp ../../hxair
 -swf air/test.swf
 -swf-version 10
 -swf-header 600:600:60:cccccc
 -main Test
--D XMPP_DEBUG
--D JABBER_DEBUG
 -D air
 
 --next
--cp ../../hxmpp
+../include.hxml
 -cp ../../hxair
 -js air/test.js
 -main Test
--D XMPP_DEBUG
--D JABBER_DEBUG
 -D air
