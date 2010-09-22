@@ -1,0 +1,90 @@
+
+##### SENDER #####
+
+../include.hxml
+-neko bin/sender.n
+-main Sender
+
+--next
+../include.hxml
+-php bin
+--php-front sender.php
+-main Sender
+
+#--next
+#../include.hxml
+#-cpp bin/cpp
+#-main Sender
+#-D HXCPP_MULTI_THREADED
+
+--next
+../include.hxml
+-swf9 bin/sender.swf
+-main Sender
+-resource bin/file.png@file
+
+--next
+../include.hxml
+-js bin/sender.js
+Sender
+-resource bin/file.png@file
+
+#--next
+#../include.hxml
+#-cp ../../hx.node.js/std
+#-js bin/sender.node.js
+#-main Sender
+#-D nodejs
+
+#--next
+#../include.hxml
+#-swf bin/air/sender.swf
+#-swf-version 10
+#-main Sender
+#-D air
+#-cp ../../hxair
+
+#--next
+#../include.hxml
+#-js bin/air/sender.js
+#Sender
+#-D air
+#-cp ../../hxair
+
+
+##### RECIEVER #####
+
+--next
+../include.hxml
+-neko bin/reciever.n
+-main Reciever
+
+--next
+../include.hxml
+-php bin
+--php-front reciever.php
+-main Reciever
+
+#--next
+#../include.hxml
+#-cpp bin/cpp
+#-main Reciever
+#-D HXCPP_MULTI_THREADED
+
+--next
+../include.hxml
+-swf9 bin/reciever.swf
+-main Reciever
+
+--next
+../include.hxml
+-cp ../../hxmpp/util
+-js bin/reciever.js
+Reciever
+
+#--next
+#../include.hxml
+#-cp ../../hx.node.js/std
+#-js bin/reciever.node.js
+#-main Reciever
+#-D nodejs
