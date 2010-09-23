@@ -11,12 +11,12 @@
 ../include.hxml
 -D JABBER_COMPONENT
 
---next
--cpp cpp
--main ComponentDemo
-../include.hxml
--D JABBER_COMPONENT
--D HXCPP_MULTI_THREADED
+#--next
+#-cpp cpp
+#-main ComponentDemo
+#../include.hxml
+#-D JABBER_COMPONENT
+#-D HXCPP_MULTI_THREADED
 
 --next
 -D nodejs

@@ -17,7 +17,7 @@ import js.io.File;
 
 class Sender extends ClientBase {
 	
-	static var FILEPATH = "file.png";
+	static var FILEPATH = "file.jpg";
 	static var RECIEVER = "julia@disktree";
 	static var initialized = false;
 	
@@ -39,11 +39,12 @@ class Sender extends ClientBase {
 			var bs = new ByteStreamTransfer( stream, p.from );
 			// TODO bs.addHost( stream.jid.toString(), "192.168.0.110", 7654  );
 			bs.hosts.push( new ByteStreamHost( stream.jid.toString(), "192.168.0.110", 7654 ) );
-	//		ft.methods.push( bs );
+			ft.methods.push( bs );
 			#end
 			
 			ft.methods.push( new IBTransfer( stream, p.from ) );
 			
+			//ft.onInit = onFileTransferInit;
 			ft.onProgress = onFileTransferProgress;
 			ft.onComplete = onFileTransferComplete;
 			ft.onFail = onFileTransferFail;
@@ -67,11 +68,9 @@ class Sender extends ClientBase {
 		}
 	}
 	
-	/*
-	function onFileTransferStart() {
+	function onFileTransferInit() {
 		trace( "Filetransfer started" );
 	}
-	*/
 	
 	function onFileTransferFail( error : String, ?info : String ) {
 		var m = error;
@@ -80,7 +79,7 @@ class Sender extends ClientBase {
 	}
 	
 	function onFileTransferProgress( bytes : Int ) {
-		trace( "Filetransfer progress: "+Std.int(bytes/1024)+"kb "+Std.int(bytes/ft.file.size*100)+"%" );
+//		trace( "Filetransfer progress: "+Std.int(bytes/1024)+"kb "+Std.int(bytes/ft.file.size*100)+"%" );
 	}
 	
 	function onFileTransferComplete() {

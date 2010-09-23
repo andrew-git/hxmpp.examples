@@ -12,7 +12,7 @@ import js.io.File;
 import jabber.data.SIListener;
 import jabber.data.IBReciever;
 import jabber.data.DataReciever;
-#if (neko||cpp||nodejs||flash||js)
+#if (neko||cpp||nodejs||flash)
 import jabber.data.ByteStreamReciever;
 #end
 
@@ -31,8 +31,8 @@ class Reciever extends ClientBase {
 		var ft_listener = new SIListener( stream, onDataTransferRequest );
 		ft_listener.onFail = onDataTransferNegotiationFail;
 		
-		#if (neko||cpp||nodejs||flash||js)
-	//	ft_listener.methods.push( new ByteStreamReciever(stream) );
+		#if (neko||cpp||nodejs||flash)
+		ft_listener.methods.push( new ByteStreamReciever(stream) );
 		#end
 		ft_listener.methods.push( new IBReciever(stream) );
 		
@@ -56,6 +56,7 @@ class Reciever extends ClientBase {
 		data = new haxe.io.BytesBuffer();
 		bytesRecieved = 0;
 		this.fr = fr;
+		//fr.onInit = onDataTransferInit;
 		fr.onProgress = onDataTransferProgress;
 		fr.onComplete = onDataTransferComplete;
 		fr.onFail = onDataTransferFail;
@@ -64,10 +65,14 @@ class Reciever extends ClientBase {
 		fr.accept( true );
 	}
 	
+	function onDataTransferInit() {
+		trace( "Data transfer started ..", "info" );
+	}
+	
 	function onDataTransferProgress( bytes : Bytes ) {
 		this.data.add( bytes );
 		bytesRecieved += bytes.length;
-		trace( "Filetransfer progress: "+Std.int(bytesRecieved/1024)+"kb "+Std.int(bytesRecieved/fr.file.size*100)+"%" );
+//		trace( "Filetransfer progress: "+Std.int(bytesRecieved/1024)+"kb "+Std.int(bytesRecieved/fr.file.size*100)+"%" );
 	}
 	
 	function onDataTransferComplete() {
@@ -96,14 +101,12 @@ class Reciever extends ClientBase {
 		});
 		
 		#elseif flash
-		trace(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		if( fr.range != null ) return;
 		var ext = fr.file.name.substr( fr.file.name.length-3 );
 		if( ext == "png" || ext == "jpg" || ext == "gif" ) {
-			trace(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "+bytes.length );
 			var l = new flash.display.Loader();
 			l.loadBytes( bytes.getData() );
-			flash.Lib.current.addChild( l );
+//			flash.Lib.current.addChild( l );
 		}
 		
 		#elseif js
@@ -124,12 +127,10 @@ class Reciever extends ClientBase {
 	}
 	
 	static function main() {
-		#if (flash||js)
-		haxe.Firebug.redirectTraces();
+		#if (flash||js) #if !air haxe.Firebug.redirectTraces(); #end #end
 		#if flash
 		flash.Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
 		flash.Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
-		#end
 		#end
 		var app = new Reciever();
 		app.login( "julia@disktree" );

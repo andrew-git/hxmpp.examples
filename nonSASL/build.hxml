@@ -1,19 +1,17 @@
 
+../include.hxml
 -neko test.n
 -main Test
-../include.hxml
 
 #--next
+#../include.hxml
 #-cpp cpp
 #-main Test
-#../include.hxml
 #-D HXCPP_MULTI_THREADED
 
 #--next
+#../include.hxml
 #-js test.node.js
 #-main App
-#-cp ../../hxmpp
-#-D XMPP_DEBUG
-#-D JABBER_DEBUG
 #-D nodejs
 #-cp ../../hx.node.js/std
