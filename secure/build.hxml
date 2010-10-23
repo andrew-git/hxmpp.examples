@@ -1,11 +1,11 @@
 
 ../include.hxml
--cp ../../hxmpp/util/tls_flash
 -swf test.swf
 -swf-version 10
 -swf-header 600:600:60:cccccc
 -main Test
 -D TLS
+-cp ../../hxmpp/util/tls_flash
 -swf-lib ../../hxmpp/util/tls_flash/tls.swf
 
 --next
@@ -27,19 +27,18 @@
 -D nodejs 
 -main Test
 
+#--next
+#../include.hxml
+#-cp ../../hxair
+#-swf air/test.swf
+#-swf-version 10
+#-swf-header 600:600:60:cccccc
+#-main Test
+#-D air
 
---next
-../include.hxml
--cp ../../hxair
--swf air/test.swf
--swf-version 10
--swf-header 600:600:60:cccccc
--main Test
--D air
-
---next
-../include.hxml
--cp ../../hxair
--js air/test.js
--main Test
--D air
+#--next
+#../include.hxml
+#-cp ../../hxair
+#-js air/test.js
+#-main Test
+#-D air

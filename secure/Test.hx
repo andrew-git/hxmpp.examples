@@ -1,6 +1,6 @@
 
 /**
-	TLS on port 5223
+	Legacy TLS on port 5223
 */
 class Test {
 	
@@ -21,7 +21,7 @@ class Test {
 			trace( "XMPP stream closed" );
 			if( e != null ) trace( e, "warn" );
 		}
-		stream.open( new jabber.JID( "hxmpp@disktree" ) );
+		stream.open( new jabber.JID( "romeo@disktree" ) );
 	}
 	
 }

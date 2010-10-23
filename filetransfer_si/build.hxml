@@ -36,13 +36,13 @@ Sender
 -main Sender
 -D nodejs
 
---next
-../include.hxml
--swf bin/air/sender.swf
--swf-version 10
--main Sender
--D air
--cp ../../hxair
+#--next
+#../include.hxml
+#-swf bin/air/sender.swf
+#-swf-version 10
+#-main Sender
+#-D air
+#-cp ../../hxair
 
 #--next
 #../include.hxml
@@ -89,10 +89,10 @@ Reciever
 -main Reciever
 -D nodejs
 
---next
-../include.hxml
--swf bin/air/reciever.swf
--swf-version 10
--main Reciever
--D air
--cp ../../hxair
+#--next
+#../include.hxml
+#-swf bin/air/reciever.swf
+#-swf-version 10
+#-main Reciever
+#-D air
+#-cp ../../hxair

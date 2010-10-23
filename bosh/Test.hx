@@ -1,8 +1,4 @@
 
-/**
-	BOSH for flash is currently broken !!!
-	See: http://code.google.com/p/haxe/issues/detail?id=172
-*/
 class Test {
 	
 	static var stream : jabber.client.Stream;

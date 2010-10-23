@@ -12,6 +12,6 @@
 #--next
 #../include.hxml
 #-js test.node.js
-#-main App
+#-main Test
 #-D nodejs
 #-cp ../../hx.node.js/std

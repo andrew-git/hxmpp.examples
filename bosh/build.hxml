@@ -1,14 +1,12 @@
 
+../include.hxml
 -js test.js
 Test
 -cp ../../hxmpp
--D JABBER_DEBUG
--D XMPP_DEBUG
 
 --next
+../include.hxml
 -swf9 test.swf
 -swf-header 1400:600:60:dddddd
 -main Test
 -cp ../../hxmpp
--D JABBER_DEBUG
--D XMPP_DEBUG

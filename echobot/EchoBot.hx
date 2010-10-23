@@ -8,26 +8,25 @@ import jabber.client.SASLAuth;
 class EchoBot {
 	
 	static var HOST = "disktree";
-	static var IP = "192.168.0.110";
+	static var IP = "127.0.0.1";
 	static var JID = "hxmpp@"+HOST;
 	static var PASSWORD = "test";
     static var RESOURCE = "HXMPP";
-	
+    
 	static var stream : Stream;
 	
 	static function main() {
 		
 		#if (flash||js)
-		if( haxe.Firebug.detect() )
-			haxe.Firebug.redirectTraces(); 
+		if( haxe.Firebug.detect() ) haxe.Firebug.redirectTraces(); 
 		#end
 		
 		// crossplatform stuff, using the 'best' connection available for the target
 		#if ( js && !nodejs && !JABBER_SOCKETBRIDGE )
 		var cnx = new jabber.BOSHConnection( HOST, IP+"/jabber" );
 		#else
-		//var cnx = new jabber.SocketConnection( IP );
-		var cnx = new jabber.SecureSocketConnection( IP );
+		var cnx = new jabber.SocketConnection( IP );
+		//var cnx = new jabber.SecureSocketConnection( IP );
 		
 		#end
 		#if JABBER_SOCKETBRIDGE trace( "Using flash socketbridge to connect to server" ); #end

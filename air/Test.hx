@@ -59,7 +59,7 @@ class Test {
 		var app = new Test();
 		// Mind! ...
 		// .. air does not allow to make secure socket connections to servers with self signed certs
-		app.login( "romeo@disktree/HXMPP", "test", "127.0.0.1", false );
+		app.login( "romeo@disktree/HXMPP", "test", "127.0.0.1", true );
 		// .. google allow secure socket connections on port 5223 only
 		//app.login( "username@gmail.com/HXMPP", "test", "talk.google.com", true );
 	}

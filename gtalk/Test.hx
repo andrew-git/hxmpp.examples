@@ -22,6 +22,9 @@ class Test extends ClientBase {
 	
 	override function onLogin() {
 		stream.sendPresence();
+		var disco = new jabber.ServiceDiscovery( stream );
+		disco.items( "gmail.com" );
+		disco.info("gmail.com");
 	}
 	
 	static function main() {

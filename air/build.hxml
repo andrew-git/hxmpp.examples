@@ -9,14 +9,16 @@
 -D JABBER_DEBUG
 -D XMPP_DEBUG
 -D air
+#-D TLS
 
---next
+#--next
 #-lib hxair
--cp ../../hxair
--cp ../../hxmpp
--cp ..
--js bin/test.js
-Test
--D JABBER_DEBUG
--D XMPP_DEBUG
--D air
+#-cp ../../hxair
+#-cp ../../hxmpp
+#-cp ..
+#-js bin/test.js
+#Test
+#-D JABBER_DEBUG
+#-D XMPP_DEBUG
+#-D air
+#-D TLS
