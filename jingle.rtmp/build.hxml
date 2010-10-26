@@ -1,0 +1,9 @@
+
+-swf9 www/callee.swf
+-main Callee
+../include.hxml
+
+--next
+-swf9 www/caller.swf
+-main Caller
+../include.hxml

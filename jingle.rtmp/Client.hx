@@ -1,12 +1,10 @@
 
 import flash.display.Sprite;
 import flash.events.MouseEvent;
-import flash.text.TextField;
 import flash.media.Video;
+import flash.text.TextField;
 
 class Client extends ClientBase {
-	
-	public static var STRATUS_KEY = haxe.Resource.getString("stratus_key");
 	
 	var ui : Sprite;
 	var info : TextField;
@@ -18,7 +16,7 @@ class Client extends ClientBase {
 		
 		super.onLogin();
 		
-		new jabber.PresenceListener( stream, onPresence );
+		flash.net.NetConnection.defaultObjectEncoding = flash.net.ObjectEncoding.AMF0;
 		
 		ui = new Sprite();
 		flash.Lib.current.addChild( ui );
@@ -37,18 +35,33 @@ class Client extends ClientBase {
 		btn_hangup.onClick = hangup;
 		menu.addChild( btn_hangup );
 		
-		video = new Video( 160, 120 );
+		video = new Video( 320, 240 );
 		video.y = 100;
 		ui.addChild( video );
+		
+		new jabber.PresenceListener( stream, onPresence );
 	}
 	
 	function onPresence( p : xmpp.Presence ) {
 	}
 	
-	function hangup() {
+	function onJingleFail( info : String ) {
+		trace( "Jingle fail ["+info+"]" );
 	}
 	
+	function onJingleInfo( x : Xml ) {
+		trace( "Jingle info["+x+"]", "info" );
+	}
+	
+	function onJingleEnd( reason : xmpp.jingle.Reason ) {
+		trace( "Jingle end ["+reason+"]", "info" );
+		//video.visible = false;
+	}
+	
+	function hangup() {
+	}
 }
+
 
 class Button extends Sprite {
 	
