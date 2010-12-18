@@ -27,7 +27,7 @@ package {
 		
 		public function Test() {
 			
-			new flash.Boot( this ); // init haXe SWC
+			haxe.init(this); // init haXe SWC
 			
 			stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
 			stage.align = flash.display.StageAlign.TOP_LEFT;
