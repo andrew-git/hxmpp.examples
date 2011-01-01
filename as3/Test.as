@@ -41,7 +41,7 @@ package {
 			info( "initializing HXMPP lib ..." );
 			
 			var jid : JID = new JID( "romeo@disktree/HXMPP" );
-			var cnx : SocketConnection = new SocketConnection( "127.0.0.1", 5222 ); 
+			var cnx : SocketConnection = new SocketConnection( "127.0.0.1" ); 
 			stream = new Stream( cnx );
 			stream.onOpen = function():void {
 				info( "XMPP stream opened" );
