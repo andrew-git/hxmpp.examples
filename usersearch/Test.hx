@@ -16,7 +16,6 @@ class Test extends ClientBase {
 	
 	function onSearchFields( jid : String, f : xmpp.UserSearch ) {
 		trace( "Search fields recieved ["+jid+"]:" );
-		//trace( f );
 		usersearch.search( jid, cast { email : "mail@example.com" } );
 	}
 	

@@ -25,7 +25,7 @@ class EchoBot {
 		#if ( js && !nodejs && !JABBER_SOCKETBRIDGE )
 		var cnx = new jabber.BOSHConnection( HOST, IP+"/jabber" );
 		#else
-		var cnx = new jabber.SocketConnection( IP );
+		var cnx = new jabber.SocketConnection( IP, 5222, false );
 		//var cnx = new jabber.SecureSocketConnection( IP );
 		
 		#end

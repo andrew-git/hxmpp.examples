@@ -5,7 +5,10 @@
 class Test {
 	
 	static function main() {
+		
 		var ip = "127.0.0.1";
+		var jid = "hxmpp@disktree";
+		
 		var cnx = new jabber.SecureSocketConnection( ip, 5223 );
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function() {
@@ -21,7 +24,7 @@ class Test {
 			trace( "XMPP stream closed" );
 			if( e != null ) trace( e, "warn" );
 		}
-		stream.open( new jabber.JID( "romeo@disktree" ) );
+		stream.open( new jabber.JID( jid ) );
 	}
 	
 }

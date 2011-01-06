@@ -3,7 +3,7 @@ import flash.events.MouseEvent;
 import flash.media.Camera;
 import flash.media.Microphone;
 import jabber.jingle.RTMPCall;
-import jabber.jingle.transport.RTMPOutput;
+import jabber.jingle.io.RTMPOutput;
 import Client;
 
 class Caller extends Client {
@@ -21,13 +21,16 @@ class Caller extends Client {
 		
 		mic = Microphone.getMicrophone();
 		if( mic == null ) {
-			trace("TODO no mic found");
+			trace("no mic found");
 			return;
 		}
 		mic.setUseEchoSuppression( true );
+		mic.setSilenceLevel( 0 );
+		mic.gain = 70;
+		
 		cam = Camera.getCamera();
 		if( cam == null ) {
-			trace("TODO no cam found");
+			trace("no cam found");
 			return;
 		}
 		cam.setMode( 320, 240, 10 );
@@ -59,10 +62,10 @@ class Caller extends Client {
 		btn_call.visible = false;
 		info.text = "CALLING JULIA .. STAND BY";
 		jingle = new RTMPCall( stream, CALLEE );
-		jingle.transports.push( new RTMPOutput("haXevideo","mystream","192.168.0.110") );
-		jingle.onConnect = onJingleConnect;
+		jingle.transports.push( new RTMPOutput("haxevideo","192.168.0.110",1935,"mystream") );
+//		jingle.onConnect = onJingleConnect;
 		jingle.onInit = onJingleInit;
-		jingle.onInfo = onJingleInfo;
+//		jingle.onInfo = onJingleInfo;
 		jingle.onFail = onJingleFail;
 		jingle.onEnd = onJingleEnd;
 		try jingle.init() catch(e:Dynamic) {
@@ -95,7 +98,7 @@ class Caller extends Client {
 	}
 	
 	static function main() {
-		haxe.Firebug.redirectTraces();
+		if( haxe.Firebug.detect() ) haxe.Firebug.redirectTraces();
 		new Caller().login( "romeo@disktree/HXMPP", "test", "192.168.0.110" );
 	}
 	

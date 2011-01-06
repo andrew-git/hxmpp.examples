@@ -18,10 +18,10 @@
 #-D JABBER_COMPONENT
 #-D HXCPP_MULTI_THREADED
 
---next
--D nodejs
--cp ../../hx.node.js/std
--js component.node.js
--main ComponentDemo
-../include.hxml
--D JABBER_COMPONENT
+#--next
+#-D nodejs
+#-cp ../../hxnodejs
+#-js component.node.js
+#-main ComponentDemo
+#../include.hxml
+#-D JABBER_COMPONENT

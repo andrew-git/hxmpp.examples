@@ -1,9 +1,11 @@
 
 -swf9 www/callee.swf
+-swf-header 600:400:60:dddddd
 -main Callee
 ../include.hxml
 
 --next
 -swf9 www/caller.swf
+-swf-header 600:400:60:dddddd
 -main Caller
 ../include.hxml

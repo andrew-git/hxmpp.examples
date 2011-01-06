@@ -34,7 +34,7 @@ class Callee extends Client {
 		responder.onInit = onJingleInit;
 		responder.onEnd = onJingleEnd;
 		responder.onFail = onJingleFail;
-		responder.onInfo = onJingleInfo;
+//		responder.onInfo = onJingleInfo;
 		btn_accept = new Button( "ACCEPT" );
 		btn_accept.addEventListener( MouseEvent.MOUSE_DOWN, mouseDownAcceptCall );
 		menu.addChild( btn_accept );
@@ -46,7 +46,7 @@ class Callee extends Client {
 	
 	function mouseDownAcceptCall( e : MouseEvent ) {
 		btn_accept.visible = btn_deny.visible = false;
-		responder.accept( true );
+		responder.accept();
 	}
 	
 	function mouseDownDenyCall( e : MouseEvent ) {
@@ -76,7 +76,7 @@ class Callee extends Client {
 	}
 	
 	static function main() {
-		haxe.Firebug.redirectTraces();
+		if( haxe.Firebug.detect() ) haxe.Firebug.redirectTraces();
 		new Callee().login( "julia@disktree/HXMPP" );
 	}
 	

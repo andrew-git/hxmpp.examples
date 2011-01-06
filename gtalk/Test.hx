@@ -2,7 +2,7 @@
 import jabber.client.Stream;
 
 /**
-	GTalk example.
+	GTalk usage example.
 	Google only allows secure socket connections on port 5223 or 443.
 */
 class Test extends ClientBase {
@@ -29,7 +29,7 @@ class Test extends ClientBase {
 	
 	static function main() {
 		var app = new Test();
-		app.login( "romeo@gmail.com/HXMPP", "yourpassword", "talk.google.com" );
+		app.login( "yourusername@gmail.com/HXMPP", "yourpassword", "talk.google.com" );
 	}
 	
 }

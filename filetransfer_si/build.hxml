@@ -31,7 +31,7 @@ Sender
 
 --next
 ../include.hxml
--cp ../../hx.node.js/std
+-cp ../../hxnodejs
 -js bin/sender.node.js
 -main Sender
 -D nodejs
@@ -84,7 +84,7 @@ Reciever
 
 --next
 ../include.hxml
--cp ../../hx.node.js/std
+-cp ../../hxnodejs
 -js bin/reciever.node.js
 -main Reciever
 -D nodejs

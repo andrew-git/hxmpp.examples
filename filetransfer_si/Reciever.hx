@@ -127,7 +127,7 @@ class Reciever extends ClientBase {
 	}
 	
 	static function main() {
-		#if (flash||js) #if !air haxe.Firebug.redirectTraces(); #end #end
+		#if (flash||js) #if (!air&&!nodejs) haxe.Firebug.redirectTraces(); #end #end
 		#if flash
 		flash.Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
 		flash.Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;

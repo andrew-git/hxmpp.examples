@@ -4,7 +4,7 @@
 -cp ../../hxmpp
 -js hxmpp.js
 -D nodejs
--cp ../../hx.node.js/std
+-cp ../../hxnodejs
 -D XMPP_DEBUG
 -D JABBER_DEBUG
 jabber.SocketConnection

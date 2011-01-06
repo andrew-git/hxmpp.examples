@@ -23,7 +23,7 @@
 --next
 ../include.hxml
 -js test.node.js
--cp ../../hx.node.js/std
+-cp ../../hxnodejs
 -D nodejs 
 -main Test
 
