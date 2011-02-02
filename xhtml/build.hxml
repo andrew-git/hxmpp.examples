@@ -2,3 +2,8 @@
 -neko test.n
 -main Test
 ../include.hxml
+
+#--next
+#-cpp test
+#-main Test
+#../include.hxml

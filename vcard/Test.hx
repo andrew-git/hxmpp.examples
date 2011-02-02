@@ -53,6 +53,7 @@ class Test extends ClientBase {
 	}
 	
 	function onVCardLoad( jid : String, data : xmpp.VCard ) {
+		
 		trace( "VCard loaded ["+jid+"]:" );
 		#if flash
 		var d = new VCardDisplay( data );
@@ -68,11 +69,6 @@ class Test extends ClientBase {
 	}
 	
 	static function main() {
-		#if flash
-		flash.Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
-		flash.Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
-		haxe.Firebug.redirectTraces();
-		#end
 		new Test().login( "romeo@disktree" );
 	}
 	

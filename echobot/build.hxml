@@ -13,9 +13,9 @@
 -cp ../../hxmpp
 -D JABBER_DEBUG
 -D XMPP_DEBUG
--swf-lib ../../hxmpp/util/tls_flash/tls.swf
--cp ../../hxmpp/util/tls_flash
--D TLS
+#-swf-lib ../../hxmpp/util/tls_flash/tls.swf
+#-cp ../../hxmpp/util/tls_flash
+#-D TLS
 -debug
 
 --next
@@ -36,14 +36,14 @@ EchoBot
 -D XMPP_DEBUG
 -debug
 
-#--next
-#-cpp cpp
-#-main EchoBot
-#-cp ../../hxmpp
-#-D JABBER_DEBUG
-#-D XMPP_DEBUG
-#-D HXCPP_MULTI_THREADED
--debug
+--next
+-cpp cpp
+-main EchoBot
+-cp ../../hxmpp
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+-D HXCPP_MULTI_THREADED
+#-debug
 
 #--next
 #-js echobot.node.js
@@ -54,3 +54,4 @@ EchoBot
 #-D JABBER_DEBUG
 #-D XMPP_DEBUG
 #-debug
+

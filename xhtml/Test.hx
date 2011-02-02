@@ -12,7 +12,7 @@ class Test extends ClientBase {
 	}
 	
 	static function main() {
-		 new Test().login( "romeo@disktree" );
+		new Test().login( "romeo@disktree" );
 	}
 	
 }

@@ -34,7 +34,9 @@ class Test {
 			}
 			auth.authenticate( null, null);
 		}
-		stream.open( new jabber.JID( null ) ); // any JID
+		var jid = new jabber.JID( null );
+		jid.domain = "disktree";
+		stream.open( jid );
 	}
 	
 }

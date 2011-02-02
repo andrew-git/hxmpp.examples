@@ -9,7 +9,7 @@ class Test {
 		var ip = "127.0.0.1";
 		var jid = "hxmpp@disktree";
 		
-		var cnx = new jabber.SecureSocketConnection( ip, 5223 );
+		var cnx = new jabber.SecureSocketConnection( ip );
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function() {
 			trace( "XMPP stream opened", "info" );

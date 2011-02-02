@@ -30,7 +30,7 @@ class ComponentDemo {
 			trace( "Component connected. Have fun!", "info" );
 		}
 		stream.open( SERVER, COMPONENT, SECRET, [identity] );
-		trace( "Connecting to server ("+stream.host+") ..." );
+		trace( "Connecting to server ("+stream.jid.host+") ..." );
 	}
 	
 }

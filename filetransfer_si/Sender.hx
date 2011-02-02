@@ -44,7 +44,7 @@ class Sender extends ClientBase {
 			
 			ft.methods.push( new IBTransfer( stream, p.from ) );
 			
-			//ft.onInit = onFileTransferInit;
+			ft.onInit = onFileTransferInit;
 			ft.onProgress = onFileTransferProgress;
 			ft.onComplete = onFileTransferComplete;
 			ft.onFail = onFileTransferFail;
@@ -69,7 +69,7 @@ class Sender extends ClientBase {
 	}
 	
 	function onFileTransferInit() {
-		trace( "Filetransfer started" );
+		trace( "Filetransfer started..." );
 	}
 	
 	function onFileTransferFail( error : String, ?info : String ) {

@@ -8,7 +8,7 @@ class Test {
 	
 	static function main() {
 		
-		haxe.Firebug.redirectTraces();
+		if( haxe.Firebug.detect() ) haxe.Firebug.redirectTraces();
 		
 		var swf = "../../hxmpp/util/socketbridge/socketbridge_tls.swf";
 		//var swf = "../../hxmpp/util/socketbridge/socketbridge.swf";

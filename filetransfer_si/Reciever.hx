@@ -48,11 +48,11 @@ class Reciever extends ClientBase {
 
 	function onDataTransferRequest( fr : DataReciever ) {
 		trace( "Data transfer request: "+fr.initiator+"\n"+
-			   "Filename: "+fr.file.name+"\n"+
-			   "Size: "+fr.file.size+" bytes\n"+
-			   "Hash: "+fr.file.hash+"\n"+
-			   "Description: "+fr.file.desc+"\n"+
-			   "Range: "+(fr.file.range!=null) );
+			   "\tFilename: "+fr.file.name+"\n"+
+			   "\tSize: "+fr.file.size+" bytes\n"+
+			   "\tHash: "+fr.file.hash+"\n"+
+			   "\tDescription: "+fr.file.desc+"\n"+
+			   "\tRange: "+(fr.file.range!=null) );
 		data = new haxe.io.BytesBuffer();
 		bytesRecieved = 0;
 		this.fr = fr;

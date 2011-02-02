@@ -7,7 +7,7 @@ Example usages and tests for the HXMPP library.
 LINKS
 -----
 http://hxmpp.disktree.net
-http://github.com/tong/hxmpp
+https://github.com/tong/hxmpp
 
 
 BUILD+RUN
@@ -19,5 +19,4 @@ All other targets use a jabber.SocketConnection.
 Two (local) client accounts are used:
 * romeo
 * julia
-
-You will have to create these to run the tests.
+.. create these to run the tests.

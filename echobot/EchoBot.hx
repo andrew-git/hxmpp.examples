@@ -9,7 +9,7 @@ class EchoBot {
 	
 	static var HOST = "disktree";
 	static var IP = "127.0.0.1";
-	static var JID = "hxmpp@"+HOST;
+	static var JID = "julia@"+HOST;
 	static var PASSWORD = "test";
     static var RESOURCE = "HXMPP";
     
@@ -17,7 +17,7 @@ class EchoBot {
 	
 	static function main() {
 		
-		#if (flash||js)
+		#if (!nodejs&&(flash||js))
 		if( haxe.Firebug.detect() ) haxe.Firebug.redirectTraces(); 
 		#end
 		
@@ -26,10 +26,9 @@ class EchoBot {
 		var cnx = new jabber.BOSHConnection( HOST, IP+"/jabber" );
 		#else
 		var cnx = new jabber.SocketConnection( IP, 5222, false );
-		//var cnx = new jabber.SecureSocketConnection( IP );
-		
 		#end
-		#if JABBER_SOCKETBRIDGE trace( "Using flash socketbridge to connect to server" ); #end
+
+		//#if JABBER_SOCKETBRIDGE trace( "Using flash socketbridge to connect to server" ); #end
 		
 		var jid = new jabber.JID( JID );
 		stream = new Stream( cnx );

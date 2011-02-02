@@ -26,7 +26,7 @@ class ClientBase {
 	}
 	
 	function login( ?jid : String, ?pass : String, ?ip : String, ?boshpath : String ) {
-
+		
 		if( jid != null ) this.jid = jid;
 		if( pass != null ) this.pass = pass;
 		if( ip != null ) this.ip = ip;
@@ -35,7 +35,7 @@ class ClientBase {
 		var _jid = new jabber.JID( jid );
 		
 		#if (neko||cpp||php||nodejs||flash||air)
-		var cnx = new jabber.SocketConnection( this.ip );
+		var cnx = new jabber.SocketConnection( this.ip, 5222, false );
 		//var cnx = new jabber.SecureSocketConnection( this.ip );
 		#elseif js
 		var cnx = new jabber.BOSHConnection( _jid.domain, this.ip+"/"+this.boshpath );

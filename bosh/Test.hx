@@ -15,6 +15,10 @@ class Test {
 			auth.authenticate( "test", "HXMPP" );
 		}
 		stream.onClose = function(?e){ trace(e);};
-		stream.open( new jabber.JID( "romeo@disktree" ) );
+		try {
+			stream.open( new jabber.JID( "romeo@disktree" ) );
+		} catch(e : Dynamic ) {
+			trace(e);
+		}
 	}
 }
