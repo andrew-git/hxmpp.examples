@@ -8,15 +8,6 @@
 
 --next
 -cp ../../hxmpp
--js test.node.js
--main Test
--D XMPP_DEBUG
--D JABBER_DEBUG
--D nodejs
--cp ../../hxnodejs
-
---next
--cp ../../hxmpp
 -cp ../../hxssl
 -php .
 --php-front test.php
@@ -27,7 +18,7 @@
 --next
 -cp ../../hxmpp
 -cp ../../hxtls/hxclasses
--swf-lib ../../hxtls/tls.swf
+-swf-lib ../../hxmpp/util/tls_flash/tls.swf
 -swf9 test.swf
 -main Test
 -D XMPP_DEBUG
@@ -41,3 +32,12 @@
 -D XMPP_DEBUG
 -D JABBER_DEBUG
 -D JABBER_SOCKETBRIDGE
+
+#--next
+#-cp ../../hxmpp
+#-js test.node.js
+#-main Test
+#-D XMPP_DEBUG
+#-D JABBER_DEBUG
+#-D nodejs
+#-cp ../../hxnodejs

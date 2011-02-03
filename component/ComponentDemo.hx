@@ -9,28 +9,26 @@ class ComponentDemo {
 	static var SERVER = "disktree";
 	static var COMPONENT = "mycomp";
 	static var SECRET = "1234";
-	
-	static var stream : Stream;
+	static var IP = "127.0.0.1";
 	
 	static function main() {
 		
 		trace( "HXMPP server component example" );
 		
 		var identity = { category : "conference", name : COMPONENT, type : "text" };
-		
-		var cnx = new jabber.SocketConnection( "127.0.0.1", 5275 );
-		stream = new Stream( cnx );
+		var cnx = new jabber.SocketConnection( IP, 5275 );
+		var stream = new Stream( cnx );
 		stream.onOpen = function() {
-			trace( "XMPP stream opened.", "info" );
+			trace( "XMPP stream opened", "info" );
 		}
 		stream.onClose = function(?e) {
-			trace( "XMPP stream closed." );
+			trace( "XMPP stream closed" );
 		}
 		stream.onConnect = function() {
 			trace( "Component connected. Have fun!", "info" );
 		}
+		trace( "Connecting to server  ..." );
 		stream.open( SERVER, COMPONENT, SECRET, [identity] );
-		trace( "Connecting to server ("+stream.jid.host+") ..." );
 	}
 	
 }

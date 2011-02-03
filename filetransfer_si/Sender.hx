@@ -17,7 +17,7 @@ import js.io.File;
 
 class Sender extends ClientBase {
 	
-	static var FILEPATH = "file.jpg";
+	static var FILEPATH = "file.txt";
 	static var RECIEVER = "julia@disktree";
 	static var initialized = false;
 	

@@ -11,30 +11,30 @@
 --php-front sender.php
 -main Sender
 
+--next
+../include.hxml
+-swf9 bin/sender.swf
+-main Sender
+-resource bin/file.txt@file
+
+--next
+../include.hxml
+-js bin/sender.js
+Sender
+-resource bin/file.txt@file
+
 #--next
 #../include.hxml
 #-cpp bin/cpp
 #-main Sender
 #-D HXCPP_MULTI_THREADED
 
---next
-../include.hxml
--swf9 bin/sender.swf
--main Sender
--resource bin/file.png@file
-
---next
-../include.hxml
--js bin/sender.js
-Sender
--resource bin/file.png@file
-
---next
-../include.hxml
--cp ../../hxnodejs
--js bin/sender.node.js
--main Sender
--D nodejs
+#--next
+#../include.hxml
+#-cp ../../hxnodejs
+#-js bin/sender.node.js
+#-main Sender
+#-D nodejs
 
 #--next
 #../include.hxml
@@ -65,12 +65,6 @@ Sender
 --php-front reciever.php
 -main Reciever
 
-#--next
-#../include.hxml
-#-cpp bin/cpp
-#-main Reciever
-#-D HXCPP_MULTI_THREADED
-
 --next
 ../include.hxml
 -swf9 bin/reciever.swf
@@ -82,12 +76,19 @@ Sender
 -js bin/reciever.js
 Reciever
 
---next
-../include.hxml
--cp ../../hxnodejs
--js bin/reciever.node.js
--main Reciever
--D nodejs
+
+#--next
+#../include.hxml
+#-cpp bin/cpp
+#-main Reciever
+#-D HXCPP_MULTI_THREADED
+
+#--next
+#../include.hxml
+#-cp ../../hxnodejs
+#-js bin/reciever.node.js
+#-main Reciever
+#-D nodejs
 
 #--next
 #../include.hxml

@@ -2,7 +2,8 @@
 import jabber.client.Stream;
 
 /**
-	Air2 usage.
+	Adobe AIR2 usage.
+	Get required typedefinitions from: http://disktree.spektral.at/git/?a=summary&p=hxair
 */
 class Test {
 	
