@@ -1,7 +1,7 @@
 
 require("./hxmpp");
 
-var cnx = new jabber.SocketConnection( "127.0.0.1" );
+var cnx = new jabber.SocketConnection( "127.0.0.1", 5222, false );
 var stream = new jabber.client.Stream( cnx );
 stream.onOpen = function(){
 	console.log("XMPP stream opened");
