@@ -1,24 +1,22 @@
 
-#-lib hxair
 -cp ../../hxair
 -cp ../../hxmpp
 -cp ..
 -swf bin/test.swf
--swf-version 10
+-swf-version 10.1
 -main Test
 -D JABBER_DEBUG
 -D XMPP_DEBUG
 -D air
 #-D TLS
 
-#--next
-#-lib hxair
-#-cp ../../hxair
-#-cp ../../hxmpp
-#-cp ..
-#-js bin/test.js
-#Test
-#-D JABBER_DEBUG
-#-D XMPP_DEBUG
-#-D air
+--next
+-cp ../../hxair
+-cp ../../hxmpp
+-cp ..
+-js bin/test.js
+Test
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+-D air
 #-D TLS

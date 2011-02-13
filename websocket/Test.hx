@@ -2,7 +2,7 @@
 class Test {
 	
 	static function main() {
-		var cnx = new jabber.WebSocketConnection( "127.0.0.1", 7000, false );
+		var cnx = new jabber.WebSocketConnection( "192.168.0.110", 5722, false );
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function(){
 			trace("XMPP stream opened");
