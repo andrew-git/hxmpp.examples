@@ -10,9 +10,9 @@
 
 --next
 ../include.hxml
--cp ../../hxmpp/util/tls_neko
 -neko test.n
 -main Test
+-lib hxssl
 
 --next
 ../include.hxml

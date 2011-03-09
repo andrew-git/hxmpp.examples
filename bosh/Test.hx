@@ -1,5 +1,5 @@
 
-class Test {
+@:keep class Test {
 	
 	static var stream : jabber.client.Stream;
 	
@@ -14,7 +14,7 @@ class Test {
 			}
 			auth.authenticate( "test", "HXMPP" );
 		}
-		stream.onClose = function(?e){ trace(e);};
+		stream.onClose = function(?e){trace(e);};
 		try {
 			stream.open( new jabber.JID( "romeo@disktree" ) );
 		} catch(e : Dynamic ) {

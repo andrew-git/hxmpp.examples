@@ -1,7 +1,7 @@
 package {
 	
 	/**
-		Example usage of the HXMPP lib from actionscript3 (mxmlc).
+		Example usage of the HXMPP lib from actionscript3 (mxmlc) using hxmpp.swc.
 	*/
 
 	import flash.Boot;

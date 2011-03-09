@@ -8,7 +8,7 @@ import jabber.client.SASLAuth;
 class EchoBot {
 	
 	static var HOST = "disktree";
-	static var IP = "127.0.0.1";
+	static var IP = '192.168.0.110';//"127.0.0.1";
 	static var JID = "julia@"+HOST;
 	static var PASSWORD = "test";
     static var RESOURCE = "HXMPP";
@@ -33,8 +33,8 @@ class EchoBot {
 		var jid = new jabber.JID( JID );
 		stream = new Stream( cnx );
 		stream.onClose = function(?e) {
-			if( e == null ) trace( "XMPP stream closed." );
-			else trace( "An XMPP stream error occured: "+e );
+			if( e == null ) trace( "XMPP stream closed.", 'warn' );
+			else trace( "An XMPP stream error occured: "+e, 'error' );
 		}
 		stream.onOpen = function() {
 			var mechs = new Array<jabber.sasl.TMechanism>();

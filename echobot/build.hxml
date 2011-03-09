@@ -36,13 +36,13 @@ EchoBot
 -D XMPP_DEBUG
 -debug
 
---next
--cpp cpp
--main EchoBot
--cp ../../hxmpp
--D JABBER_DEBUG
--D XMPP_DEBUG
--D HXCPP_MULTI_THREADED
+#--next
+#-cpp cpp
+#-main EchoBot
+#-cp ../../hxmpp
+#-D JABBER_DEBUG
+#-D XMPP_DEBUG
+#-D HXCPP_MULTI_THREADED
 #-debug
 
 #--next

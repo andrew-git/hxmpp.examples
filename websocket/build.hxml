@@ -4,9 +4,9 @@
 Test
 -cp ../../hxmpp/util
 
-#--next
-#../include.hxml
-#-swf9 test.swf
-#-swf-header 600:600:60:eeeeee
-#-main Test
-#-cp ../../hxmpp/util
+--next
+../include.hxml
+-swf9 test.swf
+-swf-header 600:600:60:eeeeee
+-main Test
+-cp ../../hxmpp/util

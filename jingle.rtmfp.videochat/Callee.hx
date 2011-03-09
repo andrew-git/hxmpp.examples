@@ -107,8 +107,6 @@ class Callee extends Client {
 	
 	static function main() {
 		haxe.Firebug.redirectTraces();
-		flash.Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
-		flash.Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
 		new Callee().login( "julia@disktree/HXMPP", "test", "192.168.0.110" );
 	}
 	
