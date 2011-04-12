@@ -1,5 +1,5 @@
 
-class Test extends ClientBase {
+class TestPong extends ClientBase {
 	
 	override function onLogin() {
 		stream.sendPresence();
@@ -8,7 +8,7 @@ class Test extends ClientBase {
 	}
 	
 	static function main() {
-		new Test().login( "julia@disktree" );
+		new TestPong().login( "julia@disktree" );
 	}
 	
 }

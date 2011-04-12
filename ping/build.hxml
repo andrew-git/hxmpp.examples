@@ -1,4 +1,9 @@
 
--neko test.n
--main Test
+-neko test_ping.n
+-main TestPing
+../include.hxml
+
+--next
+-neko test_pong.n
+-main TestPong
 ../include.hxml
