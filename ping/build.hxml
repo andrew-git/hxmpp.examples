@@ -4,6 +4,12 @@
 ../include.hxml
 
 --next
+-cpp test_ping
+-main TestPing
+../include.hxml
+-D HXCPP_MULTI_THREADED
+
+--next
 -neko test_pong.n
 -main TestPong
 ../include.hxml

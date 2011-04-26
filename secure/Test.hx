@@ -7,9 +7,12 @@ class Test {
 	static function main() {
 		
 		var ip = "127.0.0.1";
-		var jid = "hxmpp@disktree";
+		var jid = "romeo@disktree";
+
+		trace( "Connecting ["+ip+","+jid+"] ..." );
 		
 		var cnx = new jabber.SecureSocketConnection( ip );
+		//var cnx = new jabber.SocketConnection( ip );
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function() {
 			trace( "XMPP stream opened", "info" );

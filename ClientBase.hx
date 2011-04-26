@@ -4,7 +4,7 @@ import jabber.client.Stream;
 
 /**
 	Base class for XMPP client tests.
-	This class gets extended by the test applications to avoid repeating the authentication process over and over again.
+	This class gets extended by the test applications to avoid repeat writing the authentication process.
 */
 class ClientBase {
 	
@@ -15,10 +15,13 @@ class ClientBase {
 	var stream : Stream;
 	
 	function new() {
+	
+		// default credentials
 		jid = "romeo@disktree/HXMPP";
 		pass = "test";
 		ip = "127.0.0.1";
 		boshpath = "jabber";
+		
 		#if flash
 		flash.Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
 		flash.Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
@@ -58,8 +61,10 @@ class ClientBase {
 	}
 	
 	function onStreamClose( ?e ) {
-		if( e == null ) trace( "XMPP stream closed ["+stream.jid+"]", "info" );
-		else trace( "XMPP stream error ["+e+"]", "warn" );
+		if( e == null )
+			trace( "XMPP stream closed ["+stream.jid+"]", "info" );
+		else
+			trace( "XMPP stream error ["+e+"]", "error" );
 	}
 	
 	function onLoginFail( ?e ) {
@@ -74,4 +79,5 @@ class ClientBase {
 	function onLogin() {
 		//overide me
 	}
+	
 }

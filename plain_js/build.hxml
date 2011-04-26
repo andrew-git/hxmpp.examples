@@ -11,4 +11,4 @@ jabber.client.Roster
 jabber.client.SASLAuth
 jabber.sasl.PlainMechanism
 #--no-traces
---dead-code-elimination
+#--dead-code-elimination

@@ -2,11 +2,9 @@
 import jabber.client.Stream;
 
 /**
-	Adobe AIR2 usage.
+	Adobe AIR usage.
 	Get required typedefinitions from: http://disktree.spektral.at/git/?a=summary&p=hxair
-	
-	Mind! ...
-	.. AIR does not allow to make secure socket connections to servers with self signed certs.
+	Mind! AIR does not allow to make secure socket connections to servers with self signed certs.
 */
 class Test {
 	
@@ -57,6 +55,10 @@ class Test {
 	}
 	
 	static function main() {
+		#if flash
+		flash.Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
+		flash.Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
+		#end
 		var app = new Test();
 		app.login( "romeo@disktree/HXMPP", "test", "127.0.0.1", false );
 		// .. google allow secure socket connections on port 5223 only
