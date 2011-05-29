@@ -148,6 +148,6 @@ class Caller extends Client {
 	static function main() {
 		haxe.Firebug.redirectTraces();
 		var app = new Caller();
-		app.login( "romeo@disktree/HXMPP", "test", "192.168.0.110" );
+		app.login( "romeo@disktree/HXMPP", "test", "127.0.0.1" );
 	}
 }

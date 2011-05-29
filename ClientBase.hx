@@ -17,10 +17,10 @@ class ClientBase {
 	function new() {
 	
 		// default credentials
-		jid = "romeo@disktree/HXMPP";
-		pass = "test";
-		ip = "127.0.0.1";
-		boshpath = "jabber";
+		this.jid = "romeo@disktree/HXMPP";
+		this.pass = "test";
+		this.ip = "127.0.0.1";
+		this.boshpath = "jabber";
 		
 		#if flash
 		flash.Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
@@ -35,7 +35,7 @@ class ClientBase {
 		if( ip != null ) this.ip = ip;
 		if( boshpath != null ) this.boshpath = boshpath;
 		
-		var _jid = new jabber.JID( jid );
+		var _jid = new jabber.JID( this.jid );
 		
 		#if (neko||cpp||php||nodejs||flash||air)
 		var cnx = new jabber.SocketConnection( this.ip, 5222, false );

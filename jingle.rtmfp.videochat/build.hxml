@@ -2,7 +2,7 @@
 ../include.hxml
 -swf www/caller.swf
 -swf-header 600:400:60:dddddd
--swf-version 10.1
+-swf-version 10
 -main Caller
 -resource cirrus_key@cirrus_key
 
@@ -10,6 +10,6 @@
 ../include.hxml
 -swf www/callee.swf
 -swf-header 600:400:60:dddddd
--swf-version 10.1
+-swf-version 10
 -main Callee
 -resource cirrus_key@cirrus_key

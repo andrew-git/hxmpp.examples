@@ -7,8 +7,15 @@ import jabber.client.SASLAuth;
 */
 class EchoBot {
 	
+	/* 
 	static var HOST = "disktree";
 	static var IP = '192.168.0.110';//"127.0.0.1";
+	static var JID = "julia@"+HOST;
+	static var PASSWORD = "test";
+    static var RESOURCE = "HXMPP";
+    */
+    static var HOST = "jabber.hot-chilli.net";
+	static var IP = 'jabber.hot-chilli.net';//"127.0.0.1";
 	static var JID = "julia@"+HOST;
 	static var PASSWORD = "test";
     static var RESOURCE = "HXMPP";

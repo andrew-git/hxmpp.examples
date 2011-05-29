@@ -107,7 +107,7 @@ class Callee extends Client {
 	
 	static function main() {
 		haxe.Firebug.redirectTraces();
-		new Callee().login( "julia@disktree/HXMPP", "test", "192.168.0.110" );
+		new Callee().login( "julia@disktree/HXMPP", "test", "127.0.0.1" );
 	}
 	
 }

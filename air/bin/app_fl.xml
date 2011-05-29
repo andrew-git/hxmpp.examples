@@ -2,7 +2,7 @@
 
 <application xmlns="http://ns.adobe.com/air/application/2.0">
 
-	<id>net.disktree.HXMPP</id>
+	<id>net.disktree.hxmpp</id>
 	<filename>HXMPP</filename>
 	<name>HXMPP</name>
 	<description>HXMPP air (flash) test</description>
