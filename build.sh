@@ -1,6 +1,6 @@
 #!/bin/bash
 
-builded=0
+builded=1
 for i in $( ls -d */ ); do
 	if [ $(echo $i | sed 's%^_%%') = $i ]
 	then
@@ -14,4 +14,4 @@ for i in $( ls -d */ ); do
 		cd ..
 	fi
 done
-echo done:$builded
+echo done:$((builded-1)) builds

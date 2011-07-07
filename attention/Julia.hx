@@ -1,4 +1,8 @@
 
+/**
+	Julia tries to capture romeos 'attention'.
+	Will she be successful ? hehe
+*/
 class Julia extends ClientBase {
 	
 	static var entity = 'romeo@disktree/HXMPP';
@@ -13,7 +17,7 @@ class Julia extends ClientBase {
 	
 	function onPresence( p : xmpp.Presence ) {
 		if( !requestedAttention && p.from == entity ) {
-			new jabber.Attention( stream ).capture( entity, 'Hey, give me some attention!' );
+			jabber.Attention.capture( stream, entity, 'Hey, give me some attention!' );
 			requestedAttention = true;
 		}
 	}

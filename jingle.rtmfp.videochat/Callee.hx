@@ -40,6 +40,7 @@ class Callee extends Client {
 		responder.onInit = onJingleInit;
 		responder.onFail = onJingleFail;
 		responder.onEnd = onJingleEnd;
+		//responder.transport.nc; // access netconnection
 		
 		info.text = "INCOMING CALL FROM "+r.entity;
 		

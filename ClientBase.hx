@@ -37,6 +37,8 @@ class ClientBase {
 		
 		var _jid = new jabber.JID( this.jid );
 		
+		trace(this.ip);
+		
 		#if (neko||cpp||php||nodejs||flash||air)
 		var cnx = new jabber.SocketConnection( this.ip, 5222, false );
 		//var cnx = new jabber.SecureSocketConnection( this.ip );

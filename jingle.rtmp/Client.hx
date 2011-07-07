@@ -65,7 +65,7 @@ class Client extends ClientBase {
 
 class Button extends Sprite {
 	
-	public dynamic function onClick() : Void;
+	public dynamic function onClick() {}
 	
 	public var text(getText,setText) : String;
 	

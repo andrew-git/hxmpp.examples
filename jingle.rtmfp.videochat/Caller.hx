@@ -76,11 +76,14 @@ class Caller extends Client {
 	}
 	
 	function mouseDownCall( e : MouseEvent ) {
+		
 		btn_call.visible = false;
 		info.text = "CALLING JULIA .. STAND BY";
+		
 	//	RTMFPCall.cirrus_key = Client.CIRRUS_KEY;
+	
 		jingle = new RTMFPCall( stream, "julia@disktree/HXMPP" );
-		var transport = new RTMFPOutput( Client.CIRRUS_URL+Client.CIRRUS_KEY );
+		var transport = new RTMFPOutput( Client.CIRRUS_URL+Client.CIRRUS_KEY, true );
 		jingle.transports.push( transport );
 		jingle.onInit = onJingleInit;
 		jingle.onEnd = onJingleEnd;

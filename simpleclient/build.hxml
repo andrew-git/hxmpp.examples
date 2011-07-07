@@ -1,6 +1,6 @@
 
 -neko test.n
 -main Test
--lib hxmpp
+-cp ../../hxmpp
 -D XMPP_DEBUG
 -D JABBER_DEBUG

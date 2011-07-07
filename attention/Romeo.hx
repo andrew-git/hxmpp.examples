@@ -1,4 +1,7 @@
 
+/**
+	Romeo listens for 'attention' requests
+*/
 class Romeo extends ClientBase {
 	
 	override function onLogin() {
