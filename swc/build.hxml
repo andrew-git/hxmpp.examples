@@ -6,7 +6,7 @@
 jabber.SocketConnection
 jabber.ServiceDiscovery
 jabber.client.Stream
-jabber.client.SASLAuth
+jabber.client.Authentication
 jabber.client.Roster
 jabber.client.VCard
 jabber.sasl.MD5Mechanism

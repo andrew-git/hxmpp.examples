@@ -1,5 +1,5 @@
 
-import jabber.client.SASLAuth;
+import jabber.client.Authentication;
 import jabber.sasl.AnonymousMechanism;
 
 /**
@@ -27,7 +27,7 @@ class Test {
 				trace( "Server does not support anonymous login" );
 				return;
 			}
-			var auth = new SASLAuth( stream, [cast new AnonymousMechanism()] );
+			var auth = new Authentication( stream, [cast new AnonymousMechanism()] );
 			auth.onSuccess = function() {
 				stream.sendPresence();
 				trace( "Logged in as "+stream.jid.toString() );

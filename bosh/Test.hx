@@ -8,7 +8,7 @@
 		stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function(){
 			trace("XMPP stream opened");
-			var auth = new jabber.client.SASLAuth( stream, [cast new jabber.sasl.PlainMechanism()] );
+			var auth = new jabber.client.Authentication( stream, [cast new jabber.sasl.PlainMechanism()] );
 			auth.onSuccess = function(){
 				stream.sendPresence();
 			}

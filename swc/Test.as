@@ -12,7 +12,7 @@ package {
 	import jabber.SocketConnection;
 	import jabber.ServiceDiscovery;
 	import jabber.client.Stream;
-	import jabber.client.SASLAuth;
+	import jabber.client.Authentication;
 	import jabber.client.Roster;
 	import jabber.client.VCard;
 	import jabber.sasl.MD5Mechanism;
@@ -45,7 +45,7 @@ package {
 			stream = new Stream( cnx );
 			stream.onOpen = function():void {
 				info( "XMPP stream opened" );
-           	 	var auth : SASLAuth = new SASLAuth( stream, [new MD5Mechanism()] );
+           	 	var auth : Authentication = new Authentication( stream, [new MD5Mechanism()] );
            	 	auth.onSuccess = onLoginSuccess;
            	 	auth.authenticate( "test", "hxmpp" );
 			};

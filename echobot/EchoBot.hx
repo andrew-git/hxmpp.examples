@@ -1,6 +1,6 @@
 
 import jabber.client.Stream;
-import jabber.client.SASLAuth;
+import jabber.client.Authentication;
 
 /**
 	A simple XMPP client responding with a "Hello" to every message.
@@ -47,7 +47,7 @@ class EchoBot {
 			var mechs = new Array<jabber.sasl.TMechanism>();
 			mechs.push( new jabber.sasl.MD5Mechanism() );
 			mechs.push( new jabber.sasl.PlainMechanism() );
-			var auth = new SASLAuth( stream, mechs );
+			var auth = new Authentication( stream, mechs );
 			auth.onSuccess = function() {
 				new jabber.MessageListener( stream, handleMessage );
 				stream.sendPresence();

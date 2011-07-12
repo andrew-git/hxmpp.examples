@@ -31,7 +31,7 @@ class Test {
 	function onStreamOpen() {
 		var mechs = new Array<jabber.sasl.TMechanism>();
 		mechs.push( new jabber.sasl.PlainMechanism()  );
-		var auth = new jabber.client.SASLAuth( stream, mechs );
+		var auth = new jabber.client.Authentication( stream, mechs );
 		auth.onSuccess = onLogin;
 		auth.onFail = onLoginFail;
 		auth.authenticate( pass, stream.jid.resource );

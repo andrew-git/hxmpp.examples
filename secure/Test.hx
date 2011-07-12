@@ -16,7 +16,7 @@ class Test {
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function() {
 			trace( "XMPP stream opened", "info" );
-			var auth = new jabber.client.SASLAuth( stream, [cast new jabber.sasl.PlainMechanism()] );
+			var auth = new jabber.client.Authentication( stream, [cast new jabber.sasl.PlainMechanism()] );
 			auth.onSuccess = function() {
 				trace( "Authenticated as: "+stream.jid.toString(), "info" );
 				stream.sendPresence();

@@ -8,7 +8,7 @@
 jabber.BOSHConnection
 jabber.client.Stream
 jabber.client.Roster
-jabber.client.SASLAuth
+jabber.client.Authentication
 jabber.sasl.PlainMechanism
 #--no-traces
 #--dead-code-elimination
