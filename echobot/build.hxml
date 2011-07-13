@@ -36,6 +36,16 @@ EchoBot
 -D XMPP_DEBUG
 -debug
 
+--next
+-js echobot.node.js
+-main EchoBot
+-cp ../../hxmpp
+-cp ../../hxnodejs
+-D nodejs
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+-debug
+
 #--next
 #-cpp cpp
 #-main EchoBot
@@ -43,15 +53,5 @@ EchoBot
 #-D JABBER_DEBUG
 #-D XMPP_DEBUG
 #-D HXCPP_MULTI_THREADED
-#-debug
-
-#--next
-#-js echobot.node.js
-#-main EchoBot
-#-cp ../../hxmpp
-#-cp ../../hxnodejs
-#-D nodejs
-#-D JABBER_DEBUG
-#-D XMPP_DEBUG
 #-debug
 
