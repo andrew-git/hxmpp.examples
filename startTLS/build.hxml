@@ -1,14 +1,5 @@
 
 -cp ../../hxmpp
--cp ../../hxssl
--neko test.n
--main Test
--D XMPP_DEBUG
--D JABBER_DEBUG
-
---next
--cp ../../hxmpp
--cp ../../hxssl
 -php .
 --php-front test.php
 -main Test
@@ -28,10 +19,17 @@
 --next
 -cp ../../hxmpp
 -js test.js
--main Test
+Test
 -D XMPP_DEBUG
 -D JABBER_DEBUG
 -D JABBER_SOCKETBRIDGE
+
+#-cp ../../hxmpp
+#-cp ../../hxssl
+#-neko test.n
+#-main Test
+#-D XMPP_DEBUG
+#-D JABBER_DEBUG
 
 #--next
 #-cp ../../hxmpp
