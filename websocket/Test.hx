@@ -2,7 +2,7 @@
 class Test {
 	
 	static function main() {
-		var cnx = new jabber.WebSocketConnection( "192.168.0.110", 5722, false );
+		var cnx = new jabber.WebSocketConnection( "localhost", 5228, false );
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function(){
 			trace("XMPP stream opened");
@@ -11,7 +11,7 @@ class Test {
 		}
 		stream.onClose = function(?e){
 			trace( "XMPP stream closed", "info" );
-			if( e != null ) trace( e, "warn" );
+			if( e != null ) trace( e, "error" );
 		};
 		stream.open( new jabber.JID( "tong@disktree" ) );
 	}

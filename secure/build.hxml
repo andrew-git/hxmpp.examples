@@ -20,12 +20,12 @@
 --php-front test.php
 -main Test
 
---next
-../include.hxml
--js test.node.js
--cp ../../hxnodejs
--D nodejs 
--main Test
+#--next
+#../include.hxml
+#-js test.node.js
+#-cp ../../hxnodejs
+#-D nodejs 
+#-main Test
 
 #--next
 #../include.hxml

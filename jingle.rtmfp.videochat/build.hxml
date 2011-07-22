@@ -1,4 +1,6 @@
 
+### NOTE: place a textfile with your cirrus key into the ./hxmpp.examples/ directory to build this project
+
 ../include.hxml
 -swf www/caller.swf
 -swf-header 600:400:60:dddddd
