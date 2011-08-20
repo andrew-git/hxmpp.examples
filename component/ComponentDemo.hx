@@ -13,7 +13,7 @@ class ComponentDemo {
 	
 	static function main() {
 		
-		trace( "HXMPP server component example" );
+		trace( "HXMPP server component example", "info" );
 		
 		var identity = { category : "conference", name : COMPONENT, type : "text" };
 		var cnx = new jabber.SocketConnection( IP, 5275 );
@@ -22,7 +22,11 @@ class ComponentDemo {
 			trace( "XMPP stream opened", "info" );
 		}
 		stream.onClose = function(?e) {
-			trace( "XMPP stream closed" );
+			if( e == null ) trace( "XMPP stream closed", "info" );
+			else {
+				trace( "XMPP stream error: "+e, "error" );
+				stream.cnx.disconnect();
+			}
 		}
 		stream.onConnect = function() {
 			trace( "Component connected. Have fun!", "info" );

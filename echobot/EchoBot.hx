@@ -34,7 +34,7 @@ class EchoBot {
 			else trace( "An XMPP stream error occured: "+e, 'error' );
 		}
 		stream.onOpen = function() {
-			var mechs = new Array<jabber.sasl.TMechanism>();
+			var mechs = new Array<jabber.sasl.Mechanism>();
 			mechs.push( new jabber.sasl.MD5Mechanism() );
 			mechs.push( new jabber.sasl.PlainMechanism() );
 			var auth = new Authentication( stream, mechs );

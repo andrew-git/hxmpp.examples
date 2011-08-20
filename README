@@ -13,8 +13,8 @@ https://github.com/tong/hxmpp
 BUILD+RUN
 ---------
 Most of the tests extend the ClientBase class in the root directory.
-If compiled to javascript a jabber.BOSHConnection will get used to connect to the server.
-All other targets use a jabber.SocketConnection.
+If compiled to javascript a BOSHConnection will get used to connect to the server.
+All other targets use a SocketConnection.
 
 Two (local) client accounts are used:
 * romeo

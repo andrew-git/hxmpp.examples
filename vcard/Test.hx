@@ -1,40 +1,4 @@
 
-#if flash
-
-import flash.display.Sprite;
-
-private class VCardDisplay extends Sprite {
-	
-	static var py = 0.0;
-	
-	public function new( vc : xmpp.VCard ) {
-		super();
-		//var tf = new flash.text.TextField();
-		//tf.text = 
-		//addChild( tf );
-		if( vc.photo != null ) {
-			try {
-				var t = vc.photo.binval.split("\n").join("");
-				var bc = new haxe.BaseCode( haxe.io.Bytes.ofString( jabber.util.Base64.CHARS ) );
-				var ba = bc.decodeBytes( haxe.io.Bytes.ofString( t ) ).getData();
-				var l = new flash.display.Loader();
-				l.contentLoaderInfo.addEventListener( flash.events.Event.COMPLETE, function(e) {
-					l.y = py;
-					py += l.height;
-				});
-				l.loadBytes( ba );
-				addChild( l );
-			} catch( e : Dynamic ) {
-				trace( e );
-				return;
-			}
-		}
-		flash.Lib.current.addChild( this );
-	}
-}
-
-#end
-
 class Test extends ClientBase {
 	
 	var vcard : jabber.client.VCard;
@@ -52,11 +16,35 @@ class Test extends ClientBase {
 		vcard.load("julia@disktree");
 	}
 	
-	function onVCardLoad( jid : String, data : xmpp.VCard ) {
+	function onVCardLoad( jid : String, d : xmpp.VCard ) {
 		
+		if( jid == null ) jid = "my";
 		trace( "VCard loaded ["+jid+"]:" );
-		#if flash
-		var d = new VCardDisplay( data );
+		
+		if( d == null || d.photo == null || d.photo.binval == null || d.photo.type == null )
+			return;
+		
+		#if js
+		var e = js.Lib.document.createElement( "img" );
+		e.setAttribute( "src", "data:"+d.photo.type+";base64,"+d.photo.binval );
+		js.Lib.document.getElementById("vcards").appendChild( e );
+		
+		#elseif flash
+		var t = d.photo.binval.split("\n").join("");
+		var l = new flash.display.Loader();
+		l.loadBytes( jabber.util.Base64.decodeBytes( t ).getData() );
+		flash.Lib.current.addChild( l );
+		
+		#elseif neko
+		/*
+		var type = d.photo.type;
+		type = type.substr( type.indexOf("/")+1 );
+		var fo = neko.io.File.write( jid+"."+type );
+		fo.write( jabber.util.Base64.decodeBytes( d.photo.binval ) );
+		fo.flush();
+		fo.close();
+		*/
+		
 		#end
 		
 		// update own vcard

@@ -12,7 +12,7 @@ class Test {
 		var stream = new jabber.client.Stream( cnx );
 		stream.onClose = function(?e) {
 			if( e == null ) trace( "XMPP stream closed." );
-			else trace( "An XMPP stream error occured: "+e );
+			else trace( "XMPP stream error: "+e );
 		}
 		stream.onOpen = function() {
 			var anonymouseLoginAllowed = false;

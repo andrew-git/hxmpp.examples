@@ -29,7 +29,7 @@ class Test {
 	}
 	
 	function onStreamOpen() {
-		var mechs = new Array<jabber.sasl.TMechanism>();
+		var mechs = new Array<jabber.sasl.Mechanism>();
 		mechs.push( new jabber.sasl.PlainMechanism()  );
 		var auth = new jabber.client.Authentication( stream, mechs );
 		auth.onSuccess = onLogin;
@@ -45,6 +45,7 @@ class Test {
 	}
 	
 	function onLogin() {
+		trace( "Logged in", "info" );
 		new jabber.PresenceListener( stream, function(p){} );
 		new jabber.MessageListener( stream, function(m){} );
 		stream.sendPresence();

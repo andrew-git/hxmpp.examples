@@ -53,8 +53,9 @@ class ClientBase {
 	}
 	
 	function onStreamOpen() {
-		var mechs = new Array<jabber.sasl.TMechanism>();
-		mechs.push( new jabber.sasl.PlainMechanism()  );
+		var mechs = new Array<jabber.sasl.Mechanism>();
+		mechs.push( new jabber.sasl.MD5Mechanism() );
+		mechs.push( new jabber.sasl.PlainMechanism() );
 		var auth = new jabber.client.Authentication( stream, mechs );
 		auth.onSuccess = _onLogin;
 		auth.onFail = onLoginFail;

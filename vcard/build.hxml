@@ -1,9 +1,15 @@
 
+../include.hxml
 -neko test.n
 -main Test
-../include.hxml
 
 --next
--swf9 test.swf
--main Test
 ../include.hxml
+-js test.js
+Test
+
+--next
+../include.hxml
+-swf test.swf
+-swf-version 10
+-main Test
