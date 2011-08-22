@@ -1,4 +1,9 @@
 
--neko test.n
--main Test
+-neko romeo.n
+-main Romeo
+../include.hxml
+
+--next
+-neko julia.n
+-main Julia
 ../include.hxml

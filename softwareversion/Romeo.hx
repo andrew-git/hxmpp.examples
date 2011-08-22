@@ -1,22 +1,22 @@
 
 /**
-	Requests another entity for the software version.
+	Requests another entity for the 'SoftwareVersion'
 */
-class Test extends ClientBase {
+class Romeo extends ClientBase {
 	
 	override function onLogin() {
 		
 		stream.sendPresence();
 		
-		var swv = new jabber.SoftwareVersion( stream, "HXMPP", "0.4" );
+		var swv = new jabber.SoftwareVersion( stream );
 		swv.onLoad = function( jid : String, swv : xmpp.SoftwareVersion ) {
 			trace( "SoftwareVersion of "+jid+": "+swv.name+" "+swv.version+", Operating system: "+swv.os, "info" );
 		};
-		swv.load( "julia@disktree/desktop" );
+		swv.load( "julia@disktree/hxmpp" );
 	}
 	
 	static function main() {
-		new Test().login( "romeo@disktree" );
+		new Romeo().login( "romeo@disktree" );
 	}
 	
 }
