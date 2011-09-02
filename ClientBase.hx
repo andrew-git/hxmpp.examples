@@ -19,7 +19,7 @@ class ClientBase {
 		// default credentials
 		this.jid = "romeo@disktree/HXMPP";
 		this.pass = "test";
-		this.ip = "127.0.0.1";
+		this.ip = "localhost";
 		this.boshpath = "jabber";
 		
 		#if flash
@@ -37,7 +37,7 @@ class ClientBase {
 		
 		var _jid = new jabber.JID( this.jid );
 		
-		trace(this.ip);
+		trace( "Connecting to: "+this.ip );
 		
 		#if (neko||cpp||php||nodejs||flash||air)
 		var cnx = new jabber.SocketConnection( this.ip, 5222, false );

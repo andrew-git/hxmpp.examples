@@ -5,7 +5,7 @@ class Test extends ClientBase {
 	
 	override function onLogin() {
 		
-		stream.sendPresence();
+		//stream.sendPresence();
 		
 		vcard = new jabber.client.VCard( stream );
 		vcard.onLoad = onVCardLoad;
@@ -13,7 +13,18 @@ class Test extends ClientBase {
 			trace( "VCard updated" );
 		}
 		vcard.load(); // load own vcard
-		vcard.load("julia@disktree");
+		
+		
+		var roster = new jabber.client.Roster( stream );
+		roster.onLoad = function(){
+			for( i in roster.items ) {
+				vcard.load( i.jid );
+			}
+		}
+		roster.load();
+		
+		
+		//vcard.load("julia@disktree");
 	}
 	
 	function onVCardLoad( jid : String, d : xmpp.VCard ) {
@@ -57,7 +68,8 @@ class Test extends ClientBase {
 	}
 	
 	static function main() {
-		new Test().login( "romeo@disktree" );
+		new Test().login( "tong@jabber.spektral.at", "rotz", "jabber.spektral.at" );
+		//new Test().login( "romeo@disktree" );
 	}
 	
 }

@@ -2,7 +2,7 @@
 class Test {
 	
 	static function main() {
-		var cnx = new jabber.BOSHConnection( "disktree.local", "disktree.local/httpbind" );
+		var cnx = new jabber.BOSHConnection( "disktree.local", "localhost/httpbind" );
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function(){
 			trace("XMPP stream opened");

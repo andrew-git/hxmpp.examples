@@ -5,7 +5,13 @@ class BOSHConnection extends jabber.BOSHConnection {
 	
 	public override function connect() {
 		worker = Type.createInstance( untyped Worker, ["worker_bosh.js"] ); // new Worker( "worker_bosh.js" );
-		worker.onmessage = function(e) { handleHTTPData( e.data ); }
+		worker.onmessage = function(e) {
+			var d = e.data;
+			if( StringTools.startsWith( d, "Http Error #" ) )
+				handleHTTPError( d );
+			else
+				handleHTTPData( e.data );
+		}
 		super.connect();
 	}
 	
