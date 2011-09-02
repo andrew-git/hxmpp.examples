@@ -1,0 +1,6 @@
+
+-cp ../hxmpp/
+-neko buildall.n
+-main Build
+-cmd neko buildall.n
+#--macro Build.all()
