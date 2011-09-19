@@ -2,4 +2,3 @@
 ../include.hxml
 -neko test.n
 -main Test
--debug

@@ -1,27 +1,27 @@
 
+../include.hxml
 -neko component.n
 -main ComponentDemo
-../include.hxml
 -D JABBER_COMPONENT
 
 --next
+../include.hxml
 -php .
 --php-front component.php
 -main ComponentDemo
-../include.hxml
 -D JABBER_COMPONENT
 
 #--next
+#../include.hxml
 #-cpp cpp
 #-main ComponentDemo
-#../include.hxml
 #-D JABBER_COMPONENT
 #-D HXCPP_MULTI_THREADED
 
 #--next
+#../include.hxml
 #-D nodejs
 #-cp ../../hxnodejs
 #-js component.node.js
 #-main ComponentDemo
-#../include.hxml
 #-D JABBER_COMPONENT

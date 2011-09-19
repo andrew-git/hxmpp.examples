@@ -1,11 +1,10 @@
 
+../include.hxml
 -neko test.n
 -main Test
-../include.hxml
 
 #--next
-#-cp ..
-#-cp ../../hxmpp
+#../include.hxml
 #-js www/rostertest.js
 #RosterTest
 #-D XMPP_DEBUG

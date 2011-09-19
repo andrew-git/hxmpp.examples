@@ -1,6 +1,4 @@
 
+../include.hxml
 -neko test.n
 -main Test
--cp ../../hxmpp
--D XMPP_DEBUG
--D JABBER_DEBUG

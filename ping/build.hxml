@@ -1,15 +1,15 @@
 
+../include.hxml
 -neko test_ping.n
 -main TestPing
-../include.hxml
 
 #--next
+#../include.hxml
 #-cpp test_ping
 #-main TestPing
-#../include.hxml
 #-D HXCPP_MULTI_THREADED
 
 --next
+../include.hxml
 -neko test_pong.n
 -main TestPong
-../include.hxml

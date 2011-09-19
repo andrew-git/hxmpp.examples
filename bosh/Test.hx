@@ -2,7 +2,7 @@
 class Test {
 	
 	static function main() {
-		var cnx = new jabber.BOSHConnection( "disktree.local", "localhost/httpbind" );
+		var cnx = new jabber.BOSHConnection( "disktree", "localhost/httpbind" );
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function(){
 			trace("XMPP stream opened");
@@ -16,7 +16,7 @@ class Test {
 		try {
 			stream.open( new jabber.JID( "romeo@disktree" ) );
 		} catch(e : Dynamic ) {
-			trace(e);
+			trace(e,"error");
 		}
 	}
 	

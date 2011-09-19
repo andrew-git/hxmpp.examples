@@ -1,6 +1,8 @@
+#!/bin/bash
 
-import neko.FileSystem;
 import neko.Lib;
+import neko.FileSystem;
+import neko.io.File;
 
 class Build {
 	
@@ -25,14 +27,17 @@ class Build {
 		var numBuilded = 0;
 		var i = 0;
 		for( p in builds ) {
-			neko.Sys.setCwd( p );
+			var hxmlpath = p+"/build.hxml";
+			if( !FileSystem.exists( hxmlpath ) )
+				continue;
 			print( "    "+i+" : "+p );
+			neko.Sys.setCwd( p );
 			var hx = new neko.io.Process( "haxe", ["build.hxml"] );
 			hx.exitCode();
 			var err = hx.stderr.readAll().toString();
 			if( err == null || err == "" ) {
 				numBuilded++;
-				println( " : OK", "ok" );
+				println( " : ok", "ok" );
 			} else {
 				var info = err;//.substr(5);
 				while( StringTools.startsWith( info, "../" ) )
@@ -51,6 +56,7 @@ class Build {
 		if( failedBuilds.length > 0 ) {
 			println( ' ( '+failedBuilds.join(", ")+' )\n', "error" );
 		}
+		println("");
 	}
 	
 	static function print( t : Dynamic, ?level : String ) {

@@ -1,5 +1,5 @@
 
+../include.hxml
 -neko test.n
 -main Test
 -lib hxssl
-../include.hxml

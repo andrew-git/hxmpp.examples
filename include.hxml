@@ -1,6 +1,8 @@
 
 -cp ../
--cp ../../hxmpp/
+-cp ../../hxmpp
+
 -D JABBER_DEBUG
 -D XMPP_DEBUG
 #-debug
+

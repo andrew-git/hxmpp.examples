@@ -1,9 +1,9 @@
 
+../include.hxml
 -neko test.n
 -main Test
-../include.hxml
 
 #--next
+#../include.hxml
 #-cpp cpp
 #-main Test
-#../include.hxml
