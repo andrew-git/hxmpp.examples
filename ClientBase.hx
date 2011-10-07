@@ -1,6 +1,9 @@
 
 import jabber.JID;
 import jabber.client.Stream;
+#if macro
+import haxe.macro.Expr;
+#end
 
 /**
 	Base class for XMPP client tests.
@@ -59,7 +62,7 @@ class ClientBase {
 		var auth = new jabber.client.Authentication( stream, mechs );
 		auth.onSuccess = _onLogin;
 		auth.onFail = onLoginFail;
-		var resource = ( stream.jid.resource != null ) ? stream.jid.resource : "HXMPP";
+		var resource = ( stream.jid.resource != null ) ? stream.jid.resource : resource;
 		auth.authenticate( pass, resource );
 	}
 	
@@ -80,7 +83,21 @@ class ClientBase {
 	}
 	
 	function onLogin() {
-		//overide me
+		//override me
+	}
+	
+	public static inline var resource(getResource,null) : String; 
+	static function getResource() : String return "hxmpp-"+getPlatform()
+	
+	public static inline var platform(getPlatform,null) : String; 
+	static inline function getPlatform() : String {
+		return #if cpp "cpp"
+		#elseif flash "flash"
+		#elseif js
+			#if nodejs "nodejs" #else "js" #end
+		#elseif neko "neko"
+		#elseif php "php"
+		#end;
 	}
 	
 }
