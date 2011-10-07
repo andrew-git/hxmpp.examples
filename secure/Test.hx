@@ -1,6 +1,6 @@
 
 /**
-	Legacy TLS on port 5223
+	Legacy TLS (port 5223)
 */
 class Test {
 	
@@ -8,8 +8,6 @@ class Test {
 		
 		var ip = "127.0.0.1";
 		var jid = "romeo@disktree";
-
-		trace( "Connecting ["+ip+","+jid+"] ..." );
 		
 		var cnx = new jabber.SecureSocketConnection( ip );
 		//var cnx = new jabber.SocketConnection( ip );
@@ -21,12 +19,13 @@ class Test {
 				trace( "Authenticated as: "+stream.jid.toString(), "info" );
 				stream.sendPresence();
 			}
-			auth.authenticate( "test", "HXMPP" );
+			auth.authenticate( "test", ClientBase.resource );
 		}
 		stream.onClose = function(?e) {
 			trace( "XMPP stream closed" );
 			if( e != null ) trace( e, "warn" );
 		}
+		trace( "Connecting ["+ip+","+jid+"] ..." );
 		stream.open( new jabber.JID( jid ) );
 	}
 	

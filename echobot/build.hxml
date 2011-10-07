@@ -4,19 +4,16 @@
 -cp ../../hxmpp
 -D JABBER_DEBUG
 -D XMPP_DEBUG
--cp ../../hxmpp/util/tls_neko
--debug
 
 --next
--swf9 echobot.swf
+-swf echobot.swf
 -main EchoBot
 -cp ../../hxmpp
 -D JABBER_DEBUG
 -D XMPP_DEBUG
-#-swf-lib ../../hxmpp/util/tls_flash/tls.swf
-#-cp ../../hxmpp/util/tls_flash
-#-D TLS
--debug
+##-swf-lib ../../hxmpp/util/tls_flash/tls.swf
+##-cp ../../hxmpp/util/tls_flash
+##-D TLS
 
 --next
 -js echobot.js
@@ -24,8 +21,7 @@ EchoBot
 -cp ../../hxmpp
 -D JABBER_DEBUG
 -D XMPP_DEBUG
-#-D JABBER_SOCKETBRIDGE
--debug
+##-D JABBER_SOCKETBRIDGE
 
 --next
 -php .
@@ -34,7 +30,14 @@ EchoBot
 -cp ../../hxmpp
 -D JABBER_DEBUG
 -D XMPP_DEBUG
--debug
+
+--next
+-cpp cpp
+-main EchoBot
+-cp ../../hxmpp
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+#-D HXCPP_MULTI_THREADED
 
 #--next
 #-js echobot.node.js
@@ -44,14 +47,3 @@ EchoBot
 #-D nodejs
 #-D JABBER_DEBUG
 #-D XMPP_DEBUG
-#-debug
-
-#--next
-#-cpp cpp
-#-main EchoBot
-#-cp ../../hxmpp
-#-D JABBER_DEBUG
-#-D XMPP_DEBUG
-#-D HXCPP_MULTI_THREADED
-#-debug
-

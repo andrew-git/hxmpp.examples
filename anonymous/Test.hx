@@ -8,7 +8,7 @@ import jabber.sasl.AnonymousMechanism;
 class Test {
 	
 	static function main() {
-		var cnx = new jabber.SocketConnection( "127.0.0.1" );
+		var cnx = new jabber.SocketConnection( "localhost" );
 		var stream = new jabber.client.Stream( cnx );
 		stream.onClose = function(?e) {
 			if( e == null ) trace( "XMPP stream closed." );

@@ -8,8 +8,8 @@ import jabber.client.Authentication;
 class EchoBot {
 	
 	static var HOST = "disktree";
-	static var IP = '192.168.0.110';//"127.0.0.1";
-	static var JID = "julia@"+HOST;
+	static var IP = "127.0.0.1";
+	static var JID = "romeo@"+HOST;
 	static var PASSWORD = "test";
     static var RESOURCE = "HXMPP";
 	static var stream : Stream;
@@ -22,7 +22,7 @@ class EchoBot {
 		
 		// crossplatform stuff, using the 'best' connection available for the target
 		#if ( js && !nodejs && !JABBER_SOCKETBRIDGE )
-		var cnx = new jabber.BOSHConnection( HOST, IP+"/jabber" );
+		var cnx = new jabber.BOSHConnection( HOST, IP+"/http" );
 		#else
 		var cnx = new jabber.SocketConnection( IP, 5222, false );
 		#end

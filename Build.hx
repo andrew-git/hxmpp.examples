@@ -1,4 +1,3 @@
-#!/bin/bash
 
 import neko.Lib;
 import neko.FileSystem;
@@ -9,7 +8,7 @@ class Build {
 	public static function main() {
 		
 		//println( "\n  HXMPP "+HXMPP.VERSION+"\n", "info" );
-		println( "\n  HXMPP 0.4.8\n", "info" );
+		println( "\n  HXMPP "+HXMPP.VERSION+"\n", "info" );
 
 		var builds = new Array<String>();
 		for( p in FileSystem.readDirectory( "." ) ) {
