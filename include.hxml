@@ -1,7 +1,8 @@
 
+# hxml base for most of the examples/tests
+
 -cp ../
 -cp ../../hxmpp
-
 -D JABBER_DEBUG
 -D XMPP_DEBUG
 #-debug
