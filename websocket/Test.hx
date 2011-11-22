@@ -7,7 +7,7 @@ class Test {
 		stream.onOpen = function(){
 			trace("XMPP stream opened");
 			var auth = new jabber.client.Authentication( stream, [cast new jabber.sasl.PlainMechanism()] );
-			auth.authenticate( "test", "HXMPP" );
+			auth.start( "test", "HXMPP" );
 		}
 		stream.onClose = function(?e){
 			trace( "XMPP stream closed", "info" );

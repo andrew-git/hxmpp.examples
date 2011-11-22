@@ -34,7 +34,7 @@ class Test {
 		var auth = new jabber.client.Authentication( stream, mechs );
 		auth.onSuccess = onLogin;
 		auth.onFail = onLoginFail;
-		auth.authenticate( pass, stream.jid.resource );
+		auth.start( pass, stream.jid.resource );
 	}
 	
 	function onStreamClose( ?e ) {

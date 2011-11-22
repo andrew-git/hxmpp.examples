@@ -40,7 +40,7 @@ class Test {
 				stream.sendPresence();
 				new jabber.client.VCard( stream ).load();
 			}
-			auth.authenticate( password, "HXMPP" );
+			auth.start( password, "HXMPP" );
 		}
 		stream.onClose = function(?e) {
 			trace( "XMPP stream closed", ( e != null ) ? "error" : "info" );

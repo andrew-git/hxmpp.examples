@@ -7,9 +7,13 @@ import haxe.macro.Expr;
 
 /**
 	Base class for XMPP client tests.
-	This class gets extended by the test applications to avoid repeat writing the authentication process.
+	This class gets extended by most of the test applications (to avoid repeat writing the connect and authentication process).
 */
 class ClientBase {
+	
+	public static inline var defaultResource = "hxmpp-"+getPlatform();
+	//public static inline var resource(getResource,null) : String; 
+	//static function createResource() : String return "hxmpp-"+getPlatform()
 	
 	var jid : String;
 	var pass : String;
@@ -20,7 +24,7 @@ class ClientBase {
 	function new() {
 	
 		// default credentials
-		this.jid = "romeo@disktree/HXMPP";
+		this.jid = "romeo@disktree";
 		this.pass = "test";
 		this.ip = "localhost";
 		this.boshpath = "jabber";
@@ -62,8 +66,8 @@ class ClientBase {
 		var auth = new jabber.client.Authentication( stream, mechs );
 		auth.onSuccess = _onLogin;
 		auth.onFail = onLoginFail;
-		var resource = ( stream.jid.resource != null ) ? stream.jid.resource : resource;
-		auth.authenticate( pass, resource );
+		var resource = ( stream.jid.resource != null ) ? stream.jid.resource : defaultResource;
+		auth.start( pass, defaultResource );
 	}
 	
 	function onStreamClose( ?e ) {
@@ -86,15 +90,15 @@ class ClientBase {
 		//override me
 	}
 	
-	public static inline var resource(getResource,null) : String; 
-	static function getResource() : String return "hxmpp-"+getPlatform()
+	//public static inline var resource(getResource,null) : String; 
+	//static function createResource() : String return "hxmpp-"+getPlatform()
 	
 	public static inline var platform(getPlatform,null) : String; 
 	static inline function getPlatform() : String {
 		return #if cpp "cpp"
 		#elseif flash "flash"
 		#elseif js
-			#if nodejs "nodejs" #else "js" #end
+			#if nodejs "nodejs" #elseif rhino "rhino" #else "js" #end
 		#elseif neko "neko"
 		#elseif php "php"
 		#end;

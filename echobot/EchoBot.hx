@@ -20,6 +20,8 @@ class EchoBot {
 		if( haxe.Firebug.detect() ) haxe.Firebug.redirectTraces(); 
 		#end
 		
+		jabber.XMPPDebug.beautify = true;
+		
 		// crossplatform stuff, using the 'best' connection available for the target
 		#if ( js && !nodejs && !JABBER_SOCKETBRIDGE )
 		var cnx = new jabber.BOSHConnection( HOST, IP+"/http" );
@@ -36,24 +38,28 @@ class EchoBot {
 		stream.onOpen = function() {
 			var mechs = new Array<jabber.sasl.Mechanism>();
 			mechs.push( new jabber.sasl.MD5Mechanism() );
-			mechs.push( new jabber.sasl.PlainMechanism() );
+			//mechs.push( new jabber.sasl.PlainMechanism() );
 			var auth = new Authentication( stream, mechs );
 			auth.onSuccess = function() {
 				new jabber.MessageListener( stream, handleMessage );
 				stream.sendPresence();
 				trace( "Logged in as "+JID );
 			}
-			auth.authenticate( PASSWORD, RESOURCE );
+			auth.start( PASSWORD, RESOURCE );
 		}
 		stream.open( jid );
 	}
 	
 	// handle incoming messages
 	static function handleMessage( m : xmpp.Message ) {
+	
 		if( xmpp.Delayed.fromPacket( m ) != null )
 			return; // avoid processing of offline sent messages
+			
 		var jid = new jabber.JID( m.from ); // parsing the 'from' into a jabber-id
 		trace( "Recieved message from "+jid.bare+" at resource: "+jid.resource );
+		
+		// send response message
 		stream.sendPacket( new xmpp.Message( m.from, "Hello darling aka "+jid.node ) );
 	}
 	

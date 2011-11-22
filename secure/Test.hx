@@ -19,7 +19,7 @@ class Test {
 				trace( "Authenticated as: "+stream.jid.toString(), "info" );
 				stream.sendPresence();
 			}
-			auth.authenticate( "test", ClientBase.resource );
+			auth.start( "test", ClientBase.defaultResource );
 		}
 		stream.onClose = function(?e) {
 			trace( "XMPP stream closed" );

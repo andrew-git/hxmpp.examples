@@ -52,7 +52,7 @@ class Test {
 				}
 				acc.remove();
 			}
-			auth.authenticate( pass, 'HXMPP' );
+			auth.start( pass, 'HXMPP' );
 		}
 		stream.onClose = function(?e) {
 			if( e != null ) {

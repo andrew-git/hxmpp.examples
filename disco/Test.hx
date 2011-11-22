@@ -2,6 +2,12 @@
 class Test extends ClientBase {
 	
 	var disco : jabber.ServiceDiscovery;
+	var target : String;
+	
+	function new( target : String ) {
+		super();
+		this.target = target;
+	}
 	
 	override function onLogin() {
 		
@@ -19,8 +25,8 @@ class Test extends ClientBase {
 		
 		stream.sendPresence();
 		
-		// discover server items
-		disco.items( "disktree" );
+		disco.info( target ); // discover server info
+		disco.items( target ); // discover server items
 	}
 	
 	function onPresence( p : xmpp.Presence ) {
@@ -58,7 +64,14 @@ class Test extends ClientBase {
 	}
 	
 	static function main() {
-		new Test().login( "romeo@disktree" );
+		var target = "disktree";
+		#if neko
+		var args = neko.Sys.args();
+		if( args.length > 0 ) {
+			target = args[0];
+		}
+		#end
+		new Test( target ).login( "romeo@disktree" );
 	}
 
 }

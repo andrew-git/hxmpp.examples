@@ -32,7 +32,7 @@ class Test {
 				stream.sendPresence();
 				trace( "Logged in as "+stream.jid.toString() );
 			}
-			auth.authenticate( null, null);
+			auth.start( null, null);
 		}
 		var jid = new jabber.JID( null );
 		jid.domain = "disktree";

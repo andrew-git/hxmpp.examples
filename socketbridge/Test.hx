@@ -31,7 +31,7 @@ class Test {
 					trace( 'Authenticated ['+stream.jid.toString()+']', 'info' );
 					stream.sendPresence();
 				}
-				auth.authenticate( "test", "HXMPP" );
+				auth.start( "test", "HXMPP" );
 			}
 			stream.open( new jabber.JID( "romeo@disktree" ) );
 		}, 200 );

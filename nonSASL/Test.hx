@@ -17,7 +17,7 @@ class Test {
 			auth.onFail = function(?e) {
 				trace( "Failed to authenticate as "+stream.jid.toString() );
 			}
-			auth.authenticate( "test", "HXMPP" );
+			auth.start( "test", "HXMPP" );
 		}
 		stream.onClose = function(?e) {
 			trace("XMPP stream  closed "+e );

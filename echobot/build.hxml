@@ -37,6 +37,8 @@ EchoBot
 -cp ../../hxmpp
 -D JABBER_DEBUG
 -D XMPP_DEBUG
+--no-opt
+--no-inline
 #-D HXCPP_MULTI_THREADED
 
 #--next

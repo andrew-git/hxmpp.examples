@@ -27,7 +27,7 @@ class Test extends ClientBase {
 		//vcard.load("julia@disktree");
 	}
 	
-	function onVCardLoad( jid : String, d : xmpp.VCard ) {
+	function onVCardLoad( jid : String, d : xmpp.VCardTemp ) {
 		
 		if( jid == null ) jid = "my";
 		trace( "VCard loaded ["+jid+"]:" );

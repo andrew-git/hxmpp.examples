@@ -34,7 +34,7 @@ class Test {
 			auth.onSuccess = function(){
 				stream.sendPresence();
 			}
-			auth.authenticate( "test", "HXMPP" );
+			auth.start( "test", "HXMPP" );
 		}
 		stream.onClose = function(?e){trace(e);};
 		try {

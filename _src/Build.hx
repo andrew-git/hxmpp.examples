@@ -1,13 +1,15 @@
 
 import neko.Lib;
 import neko.FileSystem;
+import neko.Sys;
 import neko.io.File;
 
 class Build {
 	
 	public static function main() {
 		
-		//println( "\n  HXMPP "+HXMPP.VERSION+"\n", "info" );
+		//var color = Sys.args()[0] == "color";
+		
 		println( "\n  HXMPP "+HXMPP.VERSION+"\n", "info" );
 
 		var builds = new Array<String>();
@@ -16,9 +18,7 @@ class Build {
 				builds.push( p );
 			}
 		}
-		builds.sort( function(a,b){
-			return if( a > b ) 1 else if( a < b ) -1 else 0;
-		});
+		builds.sort( function(a,b) return if( a > b ) 1 else if( a < b ) -1 else 0 );
 		
 		println( "    Building "+builds.length+" tests ...\n" );
 
@@ -29,8 +29,11 @@ class Build {
 			var hxmlpath = p+"/build.hxml";
 			if( !FileSystem.exists( hxmlpath ) )
 				continue;
-			print( "    "+i+" : "+p );
-			neko.Sys.setCwd( p );
+			var n = (i+1);
+			var spaces = "";
+			for( i in 0...(10-Std.string(n).length) ) spaces += " ";
+			print( spaces+n+" : "+p );
+			Sys.setCwd( p );
 			var hx = new neko.io.Process( "haxe", ["build.hxml"] );
 			hx.exitCode();
 			var err = hx.stderr.readAll().toString();
@@ -45,7 +48,7 @@ class Build {
 				print( info, "error" );
 				failedBuilds.push( p );
 			}
-			neko.Sys.setCwd( "../" );
+			Sys.setCwd( "../" );
 			i++;
 		}
 		println( "\n----------------------------------------------------------------------------------------\n" );

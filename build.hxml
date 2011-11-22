@@ -1,4 +1,5 @@
 
+-cp _src/
 -cp ../hxmpp/
 -neko temp.n
 -main Build

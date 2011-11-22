@@ -12,9 +12,13 @@ https://github.com/tong/hxmpp
 
 BUILD+RUN
 ---------
-$haxe build.hxml to build all examples/tests.
+
+$haxe build.hxml
+... to build all examples/tests.
+
 Most of the tests extend the ClientBase class in the root directory.
-If so, js/browser target uses a BOSHConnection to connect to the server, all other targets use a SocketConnection for default.
+If so, the javascript/browser target uses a BOSHConnection to connect to the server,
+all other targets use a SocketConnection as default setting.
 
 Two (local) client accounts are used:
 * romeo
