@@ -1,7 +1,7 @@
 
 /**
 	Example usage of non-sasl client authentication with a xmpp server.
-	This should NOT get used since its not secure.
+	This should NOT get used, f* unsecure (Use jabber.client.Authentication instead).
 */
 class Test {
 	
@@ -10,7 +10,7 @@ class Test {
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function() {
 			trace("XMPP stream opened");
-			var auth = new jabber.client.NonSASLAuth( stream );
+			var auth = new jabber.client.NonSASLAuthentication( stream );
 			auth.onSuccess = function() {
 				trace( "Authenticated as "+stream.jid.toString() );
 			}

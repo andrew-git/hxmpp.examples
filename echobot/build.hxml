@@ -1,4 +1,5 @@
 
+-lib hxssl
 -neko echobot.n
 -main EchoBot
 -cp ../../hxmpp
@@ -37,15 +38,16 @@ EchoBot
 -cp ../../hxmpp
 -D JABBER_DEBUG
 -D XMPP_DEBUG
---no-opt
---no-inline
+#--no-opt
+#--no-inline
 #-D HXCPP_MULTI_THREADED
 
-#--next
-#-js echobot.node.js
-#-main EchoBot
-#-cp ../../hxmpp
-#-cp ../../hxnodejs
-#-D nodejs
-#-D JABBER_DEBUG
-#-D XMPP_DEBUG
+--next
+-js echobot.node.js
+-main EchoBot
+-cp ../../hxmpp
+-cp ../../node.hx
+-D nodejs
+-D JABBER_DEBUG
+-D XMPP_DEBUG
+

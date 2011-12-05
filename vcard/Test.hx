@@ -1,20 +1,25 @@
 
 class Test extends ClientBase {
 	
-	var vcard : jabber.client.VCard;
+	//var vcard : jabber.client.VCardTemp;
 	
 	override function onLogin() {
 		
 		//stream.sendPresence();
 		
-		vcard = new jabber.client.VCard( stream );
+		//vcard = new jabber.client.VCard( stream );
+		var vcard = new jabber.client.VCardTemp( stream );
+		vcard.onError = function(e) {
+			trace( "VCard error: "+e, "error" );
+		}
 		vcard.onLoad = onVCardLoad;
 		vcard.onUpdate = function(){
 			trace( "VCard updated" );
 		}
 		vcard.load(); // load own vcard
 		
-		
+		// load roster and vcards of all contacts
+		/*
 		var roster = new jabber.client.Roster( stream );
 		roster.onLoad = function(){
 			for( i in roster.items ) {
@@ -22,18 +27,22 @@ class Test extends ClientBase {
 			}
 		}
 		roster.load();
+		*/
 		
-		
+		// load another vcard
 		//vcard.load("julia@disktree");
 	}
 	
 	function onVCardLoad( jid : String, d : xmpp.VCardTemp ) {
 		
-		if( jid == null ) jid = "my";
-		trace( "VCard loaded ["+jid+"]:" );
+		if( jid == null )
+			trace( "Own vcard loaded" );
+		else
+			trace( "VCard of ["+jid+"] loaded", "info" );
 		
-		if( d == null || d.photo == null || d.photo.binval == null || d.photo.type == null )
+		if( d == null || d.photo == null || d.photo.binval == null || d.photo.type == null ) {
 			return;
+		}
 		
 		#if js
 		var e = js.Lib.document.createElement( "img" );
@@ -68,8 +77,7 @@ class Test extends ClientBase {
 	}
 	
 	static function main() {
-		new Test().login( "tong@jabber.spektral.at", "rotz", "jabber.spektral.at" );
-		//new Test().login( "romeo@disktree" );
+		new Test().login( "romeo@disktree" );
 	}
 	
 }

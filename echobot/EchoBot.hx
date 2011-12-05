@@ -8,13 +8,27 @@ import jabber.client.Authentication;
 class EchoBot {
 	
 	static var HOST = "disktree";
-	static var IP = "127.0.0.1";
+	static var IP = "localhost";
 	static var JID = "romeo@"+HOST;
 	static var PASSWORD = "test";
     static var RESOURCE = "HXMPP";
 	static var stream : Stream;
 	
 	static function main() {
+		
+		/*
+		#if cpp
+		var s = "23";
+		//trace( untyped __global__.__hxcpp_utf8_string_to_char_bytes(s) );
+		trace( cpp.Utf8.decode(s) );
+		//::haxe::Log_obj::trace(::cpp::Utf8_obj::decode(s),hx::SourceInfo(HX_CSTRING("EchoBot.hx"),22,HX_CSTRING("EchoBot"),HX_CSTRING("main")));
+		
+		untyped {
+			//printf("233".__s);
+		}
+		#end
+		return;
+		*/
 		
 		#if (!nodejs&&(flash||js))
 		if( haxe.Firebug.detect() ) haxe.Firebug.redirectTraces(); 
@@ -42,8 +56,8 @@ class EchoBot {
 			var auth = new Authentication( stream, mechs );
 			auth.onSuccess = function() {
 				new jabber.MessageListener( stream, handleMessage );
-				stream.sendPresence();
-				trace( "Logged in as "+JID );
+				//stream.sendPresence();
+				//trace( "Logged in as "+JID );
 			}
 			auth.start( PASSWORD, RESOURCE );
 		}

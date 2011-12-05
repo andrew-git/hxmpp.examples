@@ -38,7 +38,7 @@ class Test {
 			var auth = new jabber.client.Authentication( stream, [cast new jabber.sasl.PlainMechanism()] );
 			auth.onSuccess = function() {
 				stream.sendPresence();
-				new jabber.client.VCard( stream ).load();
+				new jabber.client.VCardTemp( stream ).load();
 			}
 			auth.start( password, "HXMPP" );
 		}
