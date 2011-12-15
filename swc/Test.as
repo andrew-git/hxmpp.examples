@@ -14,7 +14,7 @@ package {
 	import jabber.client.Stream;
 	import jabber.client.Authentication;
 	import jabber.client.Roster;
-	import jabber.client.VCard;
+	import jabber.client.VCardTemp;
 	import jabber.sasl.MD5Mechanism;
 	
 	/**
@@ -47,7 +47,7 @@ package {
 				info( "XMPP stream opened" );
            	 	var auth : Authentication = new Authentication( stream, [new MD5Mechanism()] );
            	 	auth.onSuccess = onLoginSuccess;
-           	 	auth.authenticate( "test", "hxmpp" );
+           	 	auth.start( "test", "hxmpp" );
 			};
 			stream.onClose = function(e:*):void {
 				info( "XMPP stream closed ("+e+")" );

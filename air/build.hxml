@@ -2,7 +2,7 @@
 ../include.hxml
 -cp ../../hxair
 -swf bin/test.swf
--swf-version 10.1
+-swf-version 11
 -main Test
 -D air
 #-D TLS
