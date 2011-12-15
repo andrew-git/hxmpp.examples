@@ -10,7 +10,7 @@ class Build {
 		
 		//var color = Sys.args()[0] == "color";
 		
-		println( "\n  HXMPP "+HXMPP.VERSION+"\n", "info" );
+		println( "\n  HXMPP\n", "info" );
 
 		var builds = new Array<String>();
 		for( p in FileSystem.readDirectory( "." ) ) {

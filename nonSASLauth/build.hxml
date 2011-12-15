@@ -9,11 +9,11 @@
 --php-front test.php
 -main Test
 
---next
-../include.hxml
--cpp cpp
--main Test
--cmd mv cpp/Test ./test
+#--next
+#../include.hxml
+#-cpp cpp
+#-main Test
+#-cmd mv cpp/Test ./test
 
 #--next
 #../include.hxml

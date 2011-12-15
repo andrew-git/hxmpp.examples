@@ -45,12 +45,12 @@ EchoBot
 ##-cp ../../hxssl.hxcpp
 #-cp ../../temp.md5
 
---next
--js echobot.node.js
--main EchoBot
--cp ../../hxmpp
--cp ../../node.hx
--D nodejs
--D JABBER_DEBUG
--D XMPP_DEBUG
+#--next
+#-js echobot.node.js
+#-main EchoBot
+#-cp ../../hxmpp
+#-cp ../../node.hx
+#-D nodejs
+#-D JABBER_DEBUG
+#-D XMPP_DEBUG
 
