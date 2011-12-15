@@ -17,7 +17,7 @@ import js.io.File;
 
 class Sender extends ClientBase {
 	
-	static var FILEPATH = "file.txt";
+	static var FILEPATH = "file.png";
 	static var RECIEVER = "julia@disktree";
 	static var initialized = false;
 	
@@ -56,7 +56,7 @@ class Sender extends ClientBase {
 				ft.sendFile( FILEPATH, "A test filetransfer", hash, true );
 				
 				#elseif (flash||js)
-				ft.sendData( haxe.Resource.getBytes( "file" ), "file.png" );
+				ft.sendData( haxe.Resource.getBytes( "file" ), FILEPATH );
 				
 				#end
 				

@@ -8,10 +8,12 @@ import jabber.client.Authentication;
 class EchoBot {
 	
 	static var HOST = "disktree";
-	static var IP = "localhost";
-	static var JID = "romeo@"+HOST;
+	static var IP = "192.168.0.110";
+	//static var HOST = "jabber.spektral.at";
+	//static var IP = "jabber.spektral.at";
+	static var JID = "julia@"+HOST;
 	static var PASSWORD = "test";
-    static var RESOURCE = "HXMPP";
+    static var RESOURCE = "hxmpp";
 	static var stream : Stream;
 	
 	static function main() {
@@ -40,7 +42,23 @@ class EchoBot {
 		#if ( js && !nodejs && !JABBER_SOCKETBRIDGE )
 		var cnx = new jabber.BOSHConnection( HOST, IP+"/http" );
 		#else
-		var cnx = new jabber.SocketConnection( IP, 5222, false );
+		
+			#if nodejs
+			var cnx = new jabber.SocketConnection( IP, 5222, true );
+			cnx.credentials = js.Node.crypto.createCredentials( {
+				key :  null, cert : null, ca : null
+				//keyPath : null, certPath : null
+				//keyPath : '/home/t0ng/.purple/certificates/x509/tls_peers',
+				//certPath : '/home/t0ng/.purple/certificates/x509/tls_peers/jabber.spektral.at'
+				
+			} );
+			/* 
+			*/
+			//var cnx = new jabber.SecureSocketConnection( IP, 5223 );
+			#else
+			var cnx = new jabber.SocketConnection( IP, 5222, false );
+			#end
+		
 		#end
 
 		var jid = new jabber.JID( JID );
@@ -54,6 +72,9 @@ class EchoBot {
 			mechs.push( new jabber.sasl.MD5Mechanism() );
 			//mechs.push( new jabber.sasl.PlainMechanism() );
 			var auth = new Authentication( stream, mechs );
+			auth.onFail = function(e) {
+				trace( "Authentication failed ("+stream.jid+")", "warn" );
+			}
 			auth.onSuccess = function() {
 				new jabber.MessageListener( stream, handleMessage );
 				//stream.sendPresence();

@@ -21,7 +21,9 @@
 ../include.hxml
 -js bin/sender.js
 Sender
--resource bin/file.txt@file
+#-resource bin/file.txt@file
+-resource bin/file.png@file
+
 
 #--next
 #../include.hxml

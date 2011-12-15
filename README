@@ -1,20 +1,17 @@
 
 HXMPP.examples
 ==============
-Example usages and tests for the HXMPP library.
+Example usages and tests for the HXMPP library (http://hxmpp.disktree.net).
 
 
-LINKS
+BUILD
 -----
-http://hxmpp.disktree.net
-https://github.com/tong/hxmpp
-
-
-BUILD+RUN
----------
-
-$haxe build.hxml
+haxe build.hxml
 ... to build all examples/tests.
+
+
+RUN EXAMPLES
+------------
 
 Most of the tests extend the ClientBase class in the root directory.
 If so, the javascript/browser target uses a BOSHConnection to connect to the server,
@@ -24,3 +21,9 @@ Two (local) client accounts are used:
 * romeo
 * julia
 .. create these to run the tests.
+
+
+LINKS
+-----
+http://hxmpp.disktree.net
+https://github.com/tong/hxmpp

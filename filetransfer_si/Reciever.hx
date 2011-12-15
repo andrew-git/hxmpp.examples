@@ -43,7 +43,7 @@ class Reciever extends ClientBase {
 	}
 
 	function onDataTransferNegotiationFail( info : String ) {
-		trace( "Data transfer negotiation failed: "+info );
+		trace( "Data transfer negotiation failed: "+info, "warn" );
 	}
 
 	function onDataTransferRequest( fr : DataReciever ) {
@@ -62,6 +62,7 @@ class Reciever extends ClientBase {
 		fr.onFail = onDataTransferFail;
 		//fr.accept( true, { offset : 4, length : 9 } );
 		//fr.accept( true, { offset : 4, length : null } );
+		trace( "Accepting file transfer ..." );
 		fr.accept( true );
 	}
 	
@@ -79,13 +80,13 @@ class Reciever extends ClientBase {
 		
 		var bytes = this.data.getBytes();
 		trace( "File transfer complete ["+bytes.length+"]" );
+		
 		if( fr.file.hash != null ) {
 			if( fr.file.hash != jabber.util.MD5.encode( bytes.toString() ) ) {
 				trace( "Hash does not match", "warn" );
 				return;
 			}
 		}
-		
 		
 		#if (neko||cpp||php)
 		var fo = File.write( "__"+fr.file.name, true );
@@ -106,14 +107,14 @@ class Reciever extends ClientBase {
 		if( ext == "png" || ext == "jpg" || ext == "gif" ) {
 			var l = new flash.display.Loader();
 			l.loadBytes( bytes.getData() );
-//			flash.Lib.current.addChild( l );
+			flash.Lib.current.addChild( l );
 		}
 		
 		#elseif js
 		if( fr.range != null ) return;
 		var ext = fr.file.name.substr( fr.file.name.length-3 );
-		if( ext == "png" || ext == "jpg" || ext == "gif" ) {
-			var s = "data:image/"+ext+";base64,"+jabber.util.Base64.removeNullbits( jabber.util.Base64.encodeBytes( bytes ) );
+		if( ext == "png" || ext == "jpg" || ext == "jpeg" || ext == "gif" ) {
+			var s = "data:image/"+ext+";base64,"+jabber.util.Base64.encodeBytes(bytes);
 			var img = js.Lib.document.createElement( "img" );
 			img.setAttribute( "src", s );
 			js.Lib.document.getElementById( "output" ).appendChild( img );

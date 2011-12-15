@@ -1,7 +1,8 @@
 
+import haxe.io.Bytes;
+import jabber.util.Base64;
+
 class Test extends ClientBase {
-	
-	//var vcard : jabber.client.VCardTemp;
 	
 	override function onLogin() {
 		
@@ -52,18 +53,20 @@ class Test extends ClientBase {
 		#elseif flash
 		var t = d.photo.binval.split("\n").join("");
 		var l = new flash.display.Loader();
-		l.loadBytes( jabber.util.Base64.decodeBytes( t ).getData() );
+		l.loadBytes( Base64.decodeBytes( t ).getData() );
 		flash.Lib.current.addChild( l );
 		
+		trace("----------------------");
+		
 		#elseif neko
-		/*
-		var type = d.photo.type;
+		var t = d.photo.binval.split("\n").join("");
+		var type =  d.photo.type;
 		type = type.substr( type.indexOf("/")+1 );
-		var fo = neko.io.File.write( jid+"."+type );
-		fo.write( jabber.util.Base64.decodeBytes( d.photo.binval ) );
+		var pic = Base64.decodeBytes( t );
+		var fo = neko.io.File.write( "recieved."+type );
+		fo.write( pic );
 		fo.flush();
 		fo.close();
-		*/
 		
 		#end
 		

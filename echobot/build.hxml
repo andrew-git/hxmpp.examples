@@ -32,15 +32,18 @@ EchoBot
 -D JABBER_DEBUG
 -D XMPP_DEBUG
 
---next
--cpp cpp
--main EchoBot
--cp ../../hxmpp
--D JABBER_DEBUG
--D XMPP_DEBUG
-#--no-opt
-#--no-inline
-#-D HXCPP_MULTI_THREADED
+
+#--next
+#-cpp cpp
+#-main EchoBot
+#-cp ../../hxmpp
+#-D JABBER_DEBUG
+#-D XMPP_DEBUG
+##--no-opt
+##--no-inline
+##-D hxssl
+##-cp ../../hxssl.hxcpp
+#-cp ../../temp.md5
 
 --next
 -js echobot.node.js

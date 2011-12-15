@@ -10,6 +10,7 @@ class Test {
 		var jid = "romeo@disktree";
 		
 		var cnx = new jabber.SecureSocketConnection( ip );
+		
 		//var cnx = new jabber.SocketConnection( ip );
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function() {
