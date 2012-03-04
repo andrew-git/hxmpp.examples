@@ -4,10 +4,13 @@ class Test extends ClientBase {
 	var lastActivityListener : jabber.LastActivityListener;
 	
 	override function onLogin() {
+	
 		super.onLogin();
+		
 		lastActivityListener = new jabber.LastActivityListener( stream );
 		new jabber.PresenceListener( stream, onPresence );
 		stream.sendPresence();
+		
 		var t = new jabber.util.Timer( 1000 );
 		t.run = onTimer;
 	}

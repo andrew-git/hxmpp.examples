@@ -20,7 +20,7 @@ class TestRomeo extends ClientBase {
 	function onPresence( p : xmpp.Presence ) {
 		if( p.type == null ) {
 			if( !playlists.exists( p.from ) ) {
-				if( p.from.parseNode() != "julia" ) {
+				if( p.from.node() != "julia" ) {
 					return;
 				}
 				var disco = new jabber.ServiceDiscovery( stream );

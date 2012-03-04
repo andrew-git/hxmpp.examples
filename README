@@ -1,26 +1,30 @@
 
 HXMPP.examples
 ==============
-Example usages and tests for the HXMPP library (http://hxmpp.disktree.net).
+Examples and tests for the HXMPP library (http://hxmpp.disktree.net).
 
 
 BUILD
 -----
-haxe build.hxml
-... to build all examples/tests.
+To build all examples/tests run: haxe build.hxml
 
 
 RUN EXAMPLES
 ------------
-
 Most of the tests extend the ClientBase class in the root directory.
 If so, the javascript/browser target uses a BOSHConnection to connect to the server,
 all other targets use a SocketConnection as default setting.
 
+You probably have to modify the ip address and host settings in the source files.
+Default ip: localhost
+Default host name: disktree
+Default http path: localhost/httpbind
+
+
 Two (local) client accounts are used:
-* romeo
-* julia
-.. create these to run the tests.
+* romeo@disktree (default)
+* romeo@disktree
+Create these (or modify the jid's in source code) to run the tests.
 
 
 LINKS

@@ -1,8 +1,8 @@
 
-#-cp ../../haxe.js.xml/
 ../include.hxml
 -js test.js
 Test
+-D BOSH_HTTP_WEBWORKER
 
 --next
 ../include.hxml

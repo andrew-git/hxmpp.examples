@@ -1,6 +1,5 @@
 
 # hxml base for most of the examples/tests
-
 -cp ../_src/
 -cp ../
 -cp ../../hxmpp

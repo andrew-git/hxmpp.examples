@@ -23,7 +23,7 @@ class Callee extends Client {
 	}
 
 	override function onPresence( p : xmpp.Presence ) {
-		var from = jabber.JIDUtil.parseBare( p.from );
+		var from = jabber.JIDUtil.bare( p.from );
 		if( from == CALLER ) {
 			if( p.type == null )
 				info.text = "WAITING FOR ROMEO TO CALL";

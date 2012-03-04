@@ -59,7 +59,7 @@ class Caller extends Client {
 	
 	override function onPresence( p : xmpp.Presence ) {
 		if( jingle == null ) {
-			var from = jabber.JIDUtil.parseBare( p.from );
+			var from = jabber.JIDUtil.bare( p.from );
 			if( from == CALLEE ) {
 				if( p.type == null ) {
 					btn_call.visible = true;

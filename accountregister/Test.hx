@@ -13,7 +13,7 @@ class Test {
 	}
 	
 	static function register() {
-		var cnx = new jabber.SocketConnection( 'localhost' );
+		var cnx = new jabber.SocketConnection();
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function() {
 			var acc = new jabber.client.Account( stream );

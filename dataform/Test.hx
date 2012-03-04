@@ -11,7 +11,7 @@ class Test extends ClientBase {
 	}
 	
 	function onPresence( p : xmpp.Presence ) {
-		if( jabber.JIDUtil.parseBare( p.from ) == ENTITY ) {
+		if( jabber.JIDUtil.bare( p.from ) == ENTITY ) {
 			var disco = new jabber.ServiceDiscovery( stream );
 			disco.onInfo = onDiscoInfo;
 			disco.info( p.from );
@@ -19,7 +19,7 @@ class Test extends ClientBase {
 	}
 	
 	function onDiscoInfo( jid : String, info : xmpp.disco.Info ) {
-		if( jabber.JIDUtil.parseBare( jid ) != ENTITY )
+		if( jabber.JIDUtil.bare( jid ) != ENTITY )
 			return;
 		for( f in info.features ) {
 			if( f == xmpp.DataForm.XMLNS ) {

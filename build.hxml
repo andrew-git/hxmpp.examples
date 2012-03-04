@@ -1,4 +1,6 @@
 
+# Builds all hxmpp examples
+
 -cp _src/
 -cp ../hxmpp/
 -neko temp.n

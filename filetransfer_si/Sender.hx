@@ -30,7 +30,7 @@ class Sender extends ClientBase {
 	}
 	
 	function onPresence( p : xmpp.Presence ) {
-		var from = jabber.JIDUtil.parseBare( p.from );
+		var from = jabber.JIDUtil.bare( p.from );
 		if( !initialized && from == RECIEVER && p.type == null ) {
 			
 			ft = new SITransfer( stream, p.from );

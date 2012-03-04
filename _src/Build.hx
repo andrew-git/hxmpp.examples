@@ -4,6 +4,9 @@ import neko.FileSystem;
 import neko.Sys;
 import neko.io.File;
 
+/**
+	Builds all examples.
+*/
 class Build {
 	
 	public static function main() {
@@ -51,7 +54,7 @@ class Build {
 			Sys.setCwd( "../" );
 			i++;
 		}
-		println( "\n----------------------------------------------------------------------------------------\n" );
+		println( "" );
 		print( numBuilded+" OK", "ok" );
 		print( " | " );
 		println( failedBuilds.length+" FAILED" ); 

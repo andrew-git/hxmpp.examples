@@ -14,7 +14,7 @@ class Test extends ClientBase {
 		super.onLogin();
 		new jabber.PresenceListener( stream, onPresence );
 		
-		// add some stream features to test disco request responses
+		// add some misc stream features to test disco request responses
 		new jabber.Pong( stream );
 		new jabber.LastActivityListener( stream );
 		
