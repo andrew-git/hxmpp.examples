@@ -6,7 +6,7 @@
 -main Test
 -D TLS
 -cp ../../hxmpp/util/tls_flash
--swf-lib ../../hxmpp/util/tls_flash/tls.swf
+-swf-lib ../../hxssl.fl/ssl.swf
 
 --next
 ../include.hxml

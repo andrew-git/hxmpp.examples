@@ -35,6 +35,7 @@ class Test {
 		var stream = new jabber.client.Stream( cnx );
 		stream.onOpen = function() {
 			trace( "XMPP stream opened" );
+			trace( "The socket connection is secure: "+stream.cnx.secure );
 			var auth = new jabber.client.Authentication( stream, [cast new jabber.sasl.PlainMechanism()] );
 			auth.onSuccess = function() {
 				stream.sendPresence();

@@ -6,8 +6,7 @@
 
 --next
 ../include.hxml
--cp ../../hxtls/hxclasses
--swf-lib ../../hxmpp/util/tls_flash/tls.swf
+-swf-lib ../../hxssl.fl/ssl.swf
 -swf9 test.swf
 -main Test
 -D TLS
