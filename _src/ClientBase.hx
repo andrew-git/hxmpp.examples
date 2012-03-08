@@ -44,7 +44,7 @@ class ClientBase {
 		
 		var _jid = new jabber.JID( this.jid );
 		
-		trace( "Connecting to: "+this.ip );
+		trace( "Connecting to: "+this.ip+" ..." );
 		
 		#if (neko||cpp||php||nodejs||flash||air)
 		var cnx = new jabber.SocketConnection( this.ip, 5222, false );
@@ -67,7 +67,7 @@ class ClientBase {
 		auth.onSuccess = _onLogin;
 		auth.onFail = onLoginFail;
 		var resource = ( stream.jid.resource != null ) ? stream.jid.resource : defaultResource;
-		auth.start( pass, defaultResource );
+		auth.start( pass, resource );
 	}
 	
 	function onStreamClose( ?e ) {
