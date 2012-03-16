@@ -1,5 +1,5 @@
 
-../include.hxml
+../src/include.hxml
 -js test.js
 Test
 #-cp ../../hx.html5

@@ -1,13 +1,13 @@
 
 -cp ../../xspf
-../include.hxml
+../src/include.hxml
 -neko test_romeo.n
 -main TestRomeo
 #-lib xspf
 
 --next
 -cp ../../xspf
-../include.hxml
+../src/include.hxml
 -neko test_julia.n
 -main TestJulia
 #-lib xspf

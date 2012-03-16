@@ -1,7 +1,7 @@
 
 ### NOTE: place a textfile with your cirrus key into the ./hxmpp.examples/ directory to build this project
 
-../include.hxml
+../src/include.hxml
 -swf www/caller.swf
 -swf-header 600:400:60:dddddd
 -swf-version 10
@@ -9,7 +9,7 @@
 -resource cirrus_key@cirrus_key
 
 --next
-../include.hxml
+../src/include.hxml
 -swf www/callee.swf
 -swf-header 600:400:60:dddddd
 -swf-version 10

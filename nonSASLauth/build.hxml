@@ -1,22 +1,22 @@
 
-../include.hxml
+../src/include.hxml
 -neko test.n
 -main Test
 
 --next
-../include.hxml
+../src/include.hxml
 -php .
 --php-front test.php
 -main Test
 
 #--next
-#../include.hxml
+#../src/include.hxml
 #-cpp cpp
 #-main Test
 #-cmd mv cpp/Test ./test
 
 #--next
-#../include.hxml
+#../src/include.hxml
 #-js test.node.js
 #-main Test
 #-D nodejs

@@ -1,12 +1,12 @@
 
-../include.hxml
+../src/include.hxml
 -js www/chatstate_romeo.js
 TestRomeo
 -lib jQueryExtern
 -resource chat.html@chat
 
 --next
-../include.hxml
+../src/include.hxml
 -js www/chatstate_julia.js
 TestJulia
 -lib jQueryExtern

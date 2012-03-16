@@ -20,13 +20,14 @@ class Test extends ClientBase {
 		stream.open( _jid );
 	}
 	
+	
 	override function onLogin() {
 		stream.sendPresence();
 		var disco = new jabber.ServiceDiscovery( stream );
 		disco.items( "gmail.com" );
 		disco.info("gmail.com");
 	}
-	
+
 	static function main() {
 		var app = new Test();
 		app.login( "yourusername@gmail.com/HXMPP", "yourpassword", "talk.google.com" );

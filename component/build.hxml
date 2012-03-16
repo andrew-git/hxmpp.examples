@@ -1,11 +1,11 @@
 
-../include.hxml
+../src/include.hxml
 -neko component.n
 -main ComponentDemo
 -D JABBER_COMPONENT
 
 --next
-../include.hxml
+../src/include.hxml
 -php .
 --php-front component.php
 -main ComponentDemo

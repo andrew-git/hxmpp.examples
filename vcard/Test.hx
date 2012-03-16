@@ -2,6 +2,9 @@
 import haxe.io.Bytes;
 import jabber.util.Base64;
 
+/**
+ * 
+*/
 class Test extends ClientBase {
 	
 	override function onLogin() {

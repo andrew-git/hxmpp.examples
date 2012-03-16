@@ -1,6 +1,6 @@
 
 # hxml base for most of the examples/tests
--cp ../_src/
+-cp ../src/
 -cp ../
 -cp ../../hxmpp
 -D JABBER_DEBUG

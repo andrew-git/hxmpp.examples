@@ -1,11 +1,11 @@
 
-../include.hxml
+../src/include.hxml
 -js test.js
 Test
 -cp ../../hxmpp/util
 
 --next
-../include.hxml
+../src/include.hxml
 -swf9 test.swf
 -swf-header 600:600:60:eeeeee
 -main Test

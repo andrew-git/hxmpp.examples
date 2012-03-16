@@ -1,5 +1,5 @@
 
-../include.hxml
+../src/include.hxml
 -cp ../../hxair
 -swf bin/test.swf
 -swf-version 11
@@ -8,7 +8,7 @@
 #-D TLS
 
 --next
-../include.hxml
+../src/include.hxml
 -cp ../../hxair
 -js bin/test.js
 Test

@@ -1,14 +1,14 @@
 
-../include.hxml
+../src/include.hxml
 -neko test.n
 -main Test
 
 --next
-../include.hxml
+../src/include.hxml
 -js test.js
 Test
 
 --next
-../include.hxml
+../src/include.hxml
 -swf test.swf
 -main Test

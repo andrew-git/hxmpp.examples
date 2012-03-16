@@ -1,5 +1,5 @@
 
-../include.hxml
+../src/include.hxml
 -swf test.swf
 -swf-version 10
 -swf-header 600:600:60:cccccc
@@ -9,26 +9,26 @@
 -swf-lib ../../hxssl.fl/ssl.swf
 
 --next
-../include.hxml
+../src/include.hxml
 -neko test.n
 -main Test
 -lib hxssl
 
 --next
-../include.hxml
+../src/include.hxml
 -php .
 --php-front test.php
 -main Test
 
 #--next
-#../include.hxml
+#../src/include.hxml
 #-js test.node.js
 #-cp ../../node.hx
 #-D nodejs 
 #-main Test
 
 #--next
-#../include.hxml
+#../src/include.hxml
 #-cp ../../hxair
 #-swf air/test.swf
 #-swf-version 10
@@ -37,7 +37,7 @@
 #-D air
 
 #--next
-#../include.hxml
+#../src/include.hxml
 #-cp ../../hxair
 #-js air/test.js
 #-main Test

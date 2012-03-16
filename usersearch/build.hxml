@@ -1,4 +1,4 @@
 
-../include.hxml
+../src/include.hxml
 -neko test.n
 -main Test

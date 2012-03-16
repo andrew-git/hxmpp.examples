@@ -1,10 +1,10 @@
 
-# Builds all hxmpp examples
+# Builds all HXMPP examples
 
--cp _src/
+-cp src/
 -cp ../hxmpp/
--neko temp.n
+-neko build.n
 -main Build
--cmd neko temp.n
--cmd rm temp.n
+-cmd neko build.n
+#-cmd rm builder.n
 #--macro Build.all()

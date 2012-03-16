@@ -5,7 +5,7 @@ import neko.Sys;
 import neko.io.File;
 
 /**
-	Builds all examples.
+	Builds all examples (which have a build.hxml file).
 */
 class Build {
 	

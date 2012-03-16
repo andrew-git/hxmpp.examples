@@ -1,9 +1,9 @@
 
-../include.hxml
+../src/include.hxml
 -neko test_romeo.n
 -main TestRomeo
 
 --next
-../include.hxml
+../src/include.hxml
 -neko test_julia.n
 -main TestJulia
